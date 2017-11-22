@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: burlywood;
+				position: relative;
+				/*使用offsetX或layerX 需设置对象相对定位*/
+			}
+			div{
+				width: 20px;
+				height: 18px;
+				border: 1px solid black;
+				display: inline-block;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="橡皮擦" />
+		<input type="button" name="" id="btn1" value="画画" />
+		设置画笔颜色:
+		<input type="color" name="" id="color" value="" /><br />
+		设置笔画宽度:<input type="range" name="rg" id="rg" value="5" min="1" max="8"/>
+		<div id="box"></div>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		
+		<script type="text/javascript">
+			
+			var rg=document.getElementById('rg');
+			var box=document.getElementById('box');
+			var btn=document.getElementById('btn');
+			var btn1=document.getElementById('btn1');
+			var color=document.getElementById('color');
+			
+			box.innerHTML=rg.value;	
+			
+//			画画
+			btn1.onclick=function(){
+				cv.strokeStyle=color.value;				
+				cv.lineWidth=rg.value;				
+			}	
+			
+						
+//			橡皮擦
+			btn.onclick=function(){
+				cv.strokeStyle='burlywood';				
+				cv.lineWidth=20;				
+			}
+			
+//			笔画宽度更变事件
+			rg.onchange=function(){
+				cv.lineWidth=this.value;
+				box.innerHTML=this.value;
+			}
+			
+
+//			颜色更变事件
+			color.onchange=function(){
+				cv.strokeStyle=this.value;				
+			}
+
+			var canvas=document.getElementById('canvas');
+			var cv=canvas.getContext('2d');
+
+			cv.lineWidth=5;
+
+
+//			鼠标按下事件
+			canvas.onmousedown=function(ev){
+				
+				ev=window.ev||ev;
+				a = ev.offsetX||ev.layerX;				
+				b = ev.offsetY||ev.layerY;
+				cv.beginPath();
+				cv.moveTo(a,b);
+	
+//			鼠标移动事件							
+				canvas.onmousemove=function(ev){
+				
+					ev=window.ev||ev;
+					c = ev.offsetX||ev.layerX;				
+					d = ev.offsetY||ev.layerY;
+
+					cv.lineTo(c,d);					
+					cv.stroke();				
+				}
+				
+				
+			}
+//			鼠标按出事件					
+			canvas.onmouseup=function(){
+				canvas.onmousemove=null;
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

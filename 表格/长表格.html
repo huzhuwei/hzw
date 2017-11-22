@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			tr:nth-child(even){
+				background-color: beige;				
+				
+			}
+			th{
+				border: 1px solid black;
+			}
+			table{
+				border-collapse: collapse;				
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<!--
+			thead  表头
+			tbody  表体
+			tfoot  表低
+			如果没写  系统默认加上-->
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>收入</th>
+					<th>支持</th>
+					<th>合计</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th></th>
+					<th></th>
+					<th>合计 </th>
+					<th>400</th>
+				</tr>
+			</tfoot>
+			<!--thead 永远显示在表头  tfoot 永远显示在表尾-->
+			<tbody>
+				<tr>
+					<th>100</th>
+					<th>200</th>
+					<th>300</th>
+					<th>400</th>
+				</tr>
+				<tr>
+					<th>100</th>
+					<th>200</th>
+					<th>300</th>
+					<th>400</th>
+				</tr>
+				<tr>
+					<th>100</th>
+					<th>200</th>
+					<th>300</th>
+					<th>400</th>
+				</tr>
+				<tr>
+					<th>100</th>
+					<th>200</th>
+					<th>300</th>
+					<th>400</th>
+				</tr>
+			</tbody>
+		
+		</table>
+	</body>
+</html>

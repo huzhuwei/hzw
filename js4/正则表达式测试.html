@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		var reg=RegExp("\\b"+"school"+"\\b")
+		var str="dschools";
+		console.log(reg.test(str));
+//		false
+
+		var str="school";
+		console.log(reg.test(str));
+//		true
+
+		var str="d school s";
+		console.log(reg.test(str));
+//		true
+
+		var str=",school1";
+		console.log(reg.test(str));
+//		false
+
+//		\bschool\b只允许school旁边含有空格或标点符号或中文  含有数字或字母会false
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

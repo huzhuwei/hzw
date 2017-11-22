@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--移动设备申明-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/symbol.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/iconfont.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	<body >
+		<div style="border: 1px solid #F2F2F2;">		
+		<div id="top">
+			
+			<svg class="icon tao" aria-hidden="true">
+	    		<use xlink:href="#icon-taoicon"></use>   		   		   		
+			</svg>
+			
+			<a href="" class="search">
+				<svg class="icon" aria-hidden="true">
+	    		<use xlink:href="#icon-search1"></use>   		   		   		
+				</svg>
+			寻找宝贝商铺
+			</a>
+		</div>			
+			<!--轮播图开始-->
+			<div class="flash">
+				<div class="swiper-container">
+	        		<div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="img/1.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/2.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/3.jpg"/></div>
+			            <div class="swiper-slide"><img src="img/4.jpg"/></div>          
+	        		</div>       	
+	        	<!-- Add Pagination -->
+	        		<div class="swiper-pagination"></div>
+    			</div>	        	
+    		</div>
+		 <script>
+		    var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		       	autoplay:3000,
+		    	loop:true,
+		    });
+		</script>  		
+		<!--轮播图结束-->
+		
+		<!--导航开始-->
+		<ul class="nav">
+			<li><a href=""><img src="taobao_img/1.png" alt="" /></a><p>天猫</p></li>
+			<li><a href=""><img src="taobao_img/2.png" alt="" /></a><p>聚划算</p></li>
+			<li><a href=""><img src="taobao_img/3.png" alt="" /></a><p>天猫国际</p></li>
+			<li><a href=""><img src="taobao_img/4.png" alt="" /></a><p>外卖</p></li>
+			<li><a href=""><img src="taobao_img/5.png" alt="" /></a><p>天猫超市</p></li>
+			<li><a href=""><img src="taobao_img/6.png" alt="" /></a><p>充值中心</p></li>
+			<li><a href=""><img src="taobao_img/7.png" alt="" /></a><p>飞猪旅行</p></li>
+			<li><a href=""><img src="taobao_img/8.png" alt="" /></a><p>领金币</p></li>
+			<li><a href=""><img src="taobao_img/9.png" alt="" /></a><p>拍卖</p></li>
+			<li><a href=""><img src="taobao_img/10.png" alt="" /></a><p>分类</p></li>
+		</ul>	
+		<!--导航结束-->
+		</div>
+		<!--头条开始-->
+		<div id="first_new">		
+			<img src="taobao_img/toutiao.png"/>
+			<span>特惠</span>
+			<a href="">爽翻 ! 999元开战斗机 !</a>
+		</div>
+		
+		
+		<!--头条结束-->
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			p{
+				width:100px;
+				margin: 0 auto;
+				font-size: 20px;
+				text-align: center;
+				background-color: black;
+			}
+			a{
+				text-align: center;
+				margin: 0 auto;
+				display: block;
+				
+				/*行内元素需要设置块属性才能居中*/
+			}
+			h1{
+				margin: 0 auto;
+			}
+			h2{
+				background-color: black;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<a href=""><p>1</p></a>
+		<!--行内元素被块元素撑开-->
+		<a href="">1</a>
+		<h1><a href="">1</a></h1>
+		<!--把行内元素放在块元素内也能居中-->
+		<h2>1</h2>
+		<!--块元素独占一行-->
+	</body>
+</html>

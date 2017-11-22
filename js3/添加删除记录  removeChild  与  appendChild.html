@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			table{
+				border-collapse: collapse;
+				text-align: center;
+				margin: 0 auto;
+				margin-top: 30px;
+				width:200px;
+				/*设置表单中的内容宽点*/
+				
+				
+			
+			}
+			#bg{
+				/*position: absolute;*/
+				width: 250px;
+				height:200px;
+				border: 1px black solid;
+				/*background-color: red;*/
+				margin: 0 auto;
+				margin-top: 10px;				
+			}
+			.bt{
+				margin: 0 auto;
+				margin-top: 10px;				
+				display: block;
+			}
+			h3{
+				text-align: center;
+				margin-top: 10px;
+			}
+			#bg tr{
+				height: 30px;
+				
+				
+			}
+		</style>
+		<script type="text/javascript">
+//		a标签删除函数
+		function dela(){
+				var tr=this.parentNode.parentNode;
+//				this 为allA[i]
+//				var name=tr.getElementsByTagName("td")[0].innerHTML;
+//				功能同下
+				var name=tr.children[0].innerHTML;
+				var flag=confirm("确认删除"+name+"吗?");
+				if(flag){				
+				tr.parentNode.removeChild(tr);
+				}
+				return false;	
+//				点击超链接以后,超链接会跳转页面,这个是超链接的默认行为
+//				但是此时我们不希望出现默认行为,可以通过在响应函数的最后return false来取消默认行为
+//				在return后的一切代码都将无效
+				}
+		window.onload=function(){
+			var allA=document.getElementsByTagName("a");			
+			for( var i=0;i<allA.length;i++){
+//				for循环会在页面加载完成之后立即执行
+//				而响应函数会在超链接被点击才执行
+//			function dl(str,fun){
+//				var allA=document.getElementsById("str");
+			allA[i].onclick = dela;
+//			单击执行dela函数
+			}
+			
+			var bt=document.getElementById("bt1");			
+//			按钮响应函数
+			bt.onclick = function(){
+//			获取输入框的值
+			var name=document.getElementsByName("empName")[0].value;
+//			创建文本框的节点 
+			var txtname=document.createTextNode(name);
+//			创建td节点
+			var tdname=document.createElement("td");
+//			td节点跟文本节点连接
+			tdname.appendChild(txtname);
+//			创建tr节点
+			var tr=document.createElement("tr");
+//			tr节点跟td节点连接
+			tr.appendChild(tdname);
+//			获取table节点
+			var table1=document.getElementsByTagName("tbody")[0];
+//			table节点跟tr节点连接
+			table1.appendChild(tr);
+			console.log(bt.id);
+//			获取节点的id名
+			
+//			获取输入框的值
+			var email=document.getElementsByName("empEmail")[0].value;
+//			创建文本框的节点
+			var txtemail=document.createTextNode(email);
+//			创建td节点
+			var tdemail=document.createElement("td");
+//			td节点跟文本节点连接
+			tdemail.appendChild(txtemail);
+//			tr节点跟td节点连接
+			tr.appendChild(tdemail);
+
+//			获取输入框的值
+			var salary=document.getElementsByName("empSalary")[0].value;			
+			//创建文本框的节点
+			var txtsalary=document.createTextNode(salary);
+//			创建td节点
+			var tdsalary=document.createElement("td");
+//			td节点跟文本节点连接
+			tdsalary.appendChild(txtsalary);
+//			tr节点跟td节点连接
+			tr.appendChild(tdsalary);
+			
+//			创建a节点
+			var a=document.createElement("a");
+//			向a标签添加href属性
+			a.href="javascript:";
+//			创建文本节点
+			var atxt=document.createTextNode("delete");	
+//			a节点与文本节点连接
+			a.appendChild(atxt);			
+//			创建td节点
+			var tdtxt=document.createElement("td");
+//			td节点与a节点连接
+			tdtxt.appendChild(a);			
+//			tr节点跟td节点连接
+			tr.appendChild(tdtxt);
+//			a标签点击事件
+			a.onclick=dela;			
+			
+//			另一种添加方式  该方式有很多负面影响
+//			tr.innerHTML+="<td>"+name+"</td> >"+"<td><a href='javascript:;'></a></td> >"
+//			var a =tr.getElementsByName("a")[0]
+//			从新建tr节点中获取a标签节点
+			}
+		}
+//			var allA=document.getElementsByTagName("table");
+//			var allB=document.getElementsByTagName("tr");
+//			allA[0].removeChild(allB[0]);
+		</script>
+	</head>
+	<body>
+		<table id="t1" border="1" cellspacing="" cellpadding="">
+			<tr>
+				<th>name</th>
+				<th>email</th>
+				<th>salary</th>
+				<th></th>
+			</tr>
+			<tr>
+				
+				<td>tom</td><td>Data</td><td>Data</td><td><a href="javascript:;">delete</a></td>
+			</tr>
+			<tr>
+				<td>sala</td><td>Data</td><td>Data</td><td><a href="">delete</a></td>
+			</tr>
+			<tr>
+				<td>bob</td><td>Data</td><td>Data</td><td><a href="">delete</a></td>
+			</tr>
+		</table>
+		
+		<div id="bg">
+			<h3>添加新员工</h3>
+			<table cellspacing="" cellpadding="">
+
+				<tr>
+					<td>name:</td><td><input type="text" name="empName" /></td>
+				</tr>
+				<tr>
+					<td>email:</td><td><input type=""name="empEmail"/></td>
+				
+				</tr>
+				<tr>
+					<td>salary:</td><td><input type=""name="empSalary"/></td>
+
+				</tr>
+			</table>
+			<input class="bt" id="bt1"type="submit"/>
+			
+			
+	
+		</div>
+					
+		
+	</body>
+</html>

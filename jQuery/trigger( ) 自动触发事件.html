@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var age=prompt('请输入年龄,如果成年了,就提交表单');
+				if(age>18)
+				$("#form").trigger('submit');
+//				满足条件直接触发事件,适用于其他事件 如click mouse 
+			})
+		</script>
+	</head>
+	<body>
+		<form action="hd.php" method="post" id="form">
+			账号:<input type="text" name="" id="" value="" />
+			<br />
+			密码:<input type="text" name="" id="" value="" />
+			<br />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>
+ 

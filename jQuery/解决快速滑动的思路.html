@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: 0 auto;
+			}
+		</style>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#box').mouseenter(function(){
+//					设定延时器
+					timer=setTimeout(function(){
+						alert('我滑动了');
+						
+					},1000)
+				})	
+				
+				$('#box').mouseleave(function(){
+					clearTimeout(timer);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

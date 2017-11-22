@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* CSS Document */
+.blueberry {
+	margin: 0 auto;
+	position:relative;
+}
+.blueberry .slides {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin-bottom:0;
+}
+.blueberry .slides li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	margin-left:0px;
+}
+.blueberry .slides li img {
+	display: block;
+	width: 640px;
+	max-width: none;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.blueberry .slides li.active {
+	display: block;
+	position: relative;
+}
+.blueberry .crop li img {
+	width: auto;
+}
+.blueberry .pager {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+	width:200px;
+	margin:0px auto;
+	height:24px;
+	text-align: center;
+}
+.blueberry .pager li {
+	display: inline-block;
+	float:left;
+	margin-left:0px;
+}
+.blueberry .pager li a, .blueberry .pager li a span {
+	display: block;
+	height: 5px;
+	width: 5px;
+}
+.blueberry .pager li a {
+	padding: 10px 10px;
+}
+.blueberry .pager li a span {
+	overflow: hidden;
+	background: #22549a;
+	text-indent: -9999px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 3px;
+}
+.blueberry .pager li.active a span {
+	background: #F90;
+}

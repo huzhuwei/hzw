@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$("#btn1").click(function(){
+					$("img").animate({'left':'200px'},2000);
+				})
+				
+				$("#btn2").click(function(){
+					$("img").stop();
+//					立即停止到当前位置
+				})
+				
+				$("#btn3").click(function(){
+					$("img").finish();
+//					立即到达终点
+				})
+			})
+			
+		</script>
+		<style type="text/css">
+			
+			img{
+				width:100px;
+				height: 100px;
+				display: block;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		
+			
+
+		<input type="button" name="" id="btn1" value="开始" />
+		<input type="button" name="" id="btn2" value="停止" />
+		<input type="button" name="" id="btn3" value="结束" />
+		<img src="img/1.jpg" />
+		
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#btn').click(function(){
+//					way 1				
+//					$('img').css({'display':'none'});
+//					way 2
+//					隐藏
+//					$('img').hide();
+////					显示
+//					$('img').show();
+//					切换缩小变大
+//					$('img').toggle();
+//					缓慢隐藏   
+//					$('img').fadeOut(1000);	
+//					缓慢出现
+//					$('img').fadeIn(1000);	
+//					可设置时间  单位毫秒   不填默认1秒
+//					动画结束后执行函数
+//					$('img').fadeOut(1000,function(){
+//						alert('执行完毕')
+//					});
+//					缓慢切换显隐
+					$('img').fadeToggle(1000);
+				})
+					
+
+				
+				
+				
+			})
+			
+		</script>
+		<style type="text/css">
+			img{
+				width:200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button"  id="btn" value="点我一下" />
+		<img src="img/1.jpg"/>
+		<h1>人人做后盾</h1>
+	</body>
+</html>

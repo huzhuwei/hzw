@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext('2d');
+			
+//			实心圆	
+			cv.beginPath();
+			cv.arc(100,100,50,0*Math.PI/180,360*Math.PI/180);
+//			Math.PI为π   360度=2π弧度  以弧度为单位
+			cv.fillStyle='yellow';
+			cv.fill();
+			
+//			空心圆
+			cv.beginPath();
+			cv.arc(180,180,50,0*Math.PI/180,360*Math.PI/180);
+			cv.strokeStyle='yellow';
+			cv.stroke();
+			
+//			半圆
+			cv.beginPath();
+			cv.arc(50,200,50,0*Math.PI/180,180*Math.PI/180);
+//			Math.PI为π   360度=2π弧度  以弧度为单位
+			cv.fillStyle='green';
+			cv.fill();
+			
+			
+		</script>
+	</body>
+</html>

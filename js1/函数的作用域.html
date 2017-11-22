@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//		var a=10;
+//			function fun(){
+//				console.log("a="+a)
+//			}
+//			fun(); 
+//		在函数作用域中可以访问到全局作用域的变量   函数优先获取函数内的变量,
+//		如果要访问全局变量,则可以使用window.a对象
+
+//		全局作用域不能访问函数作用域
+
+				b=10;
+			function fun2(){
+				
+//				未使用var定义,则变量属于全局变量
+				console.log("b="+b);
+				b=15;
+//				
+			}
+			fun2()
+			console.log("b="+b)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

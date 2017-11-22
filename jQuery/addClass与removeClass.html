@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 100px;
+				height: 50px;
+				float: left;
+				background-color: green;
+				text-align: center;
+				line-height: 50px;
+				margin-left: 10px;
+			}
+			.cur{
+				background-color: yellow;
+				/*font-size: 30px;*/
+			}
+		</style>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+	
+		<script type="text/javascript">
+			$(function(){
+				$("p").click(function(){
+					$(this).addClass('cur');
+					$(this).siblings('p').removeClass('cur');
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+	</body>
+</html>

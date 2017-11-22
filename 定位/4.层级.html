@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" />
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+				position: relative;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+				/*如果position 都开启  从结构上下面的元素盖上上面的元素
+				z-index用来设置元素的层级
+				没有开启定位的元素,不起作用
+				父元素层级再高,盖不住子元素*/
+				z-index: 1;
+				opacity:0.4;
+				
+				/*设置透明度 0-1;0完全不透明
+				 在ie8及以下不支持,需要加filter属性*/
+				filter:alpha(opacity=40);
+				40相当于0.align-self: ;
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+				position: absolute;
+				background-image: url(img/1.jpg);
+				background-repeat: no-repeat;
+				repeat-x 沿水平方向重复
+				repeat-y 沿垂直方向重复
+				/*防止图片重复*/
+				
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
+</html>

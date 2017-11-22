@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 50px;
+				background-color: blanchedalmond;
+				border-bottom: 1px solid black;
+			}
+			.change{
+				height: 100px;
+			}
+		</style>
+		<script type="text/javascript" src="js/Class toggle.js"></script>
+		<script type="text/javascript" src="js/move tools.js"></script>
+		<script type="text/javascript">
+		window.onload=function(){
+
+			var divArr=document.getElementsByTagName("div");
+			var oldClass=document.createElement("div");
+	
+//			使用var oldClass定义一个节点是无效的
+			addClass(divArr[0],"change");
+			
+			
+			for(var i=0;i<divArr.length;i++){
+
+				divArr[i].onclick=function(){										
+					var nowClass=this;
+//					获取初始值高度
+					actionMetu(nowClass);
+					
+		
+				
+					if(oldClass != nowClass && hasClass(oldClass,"change")){
+//						条件为  旧的节点与新的节点不一样  且旧的节点是开着的
+//						打开菜单以后  关闭之前打开的菜单
+						actionMetu(oldClass);
+//						toggleClass(oldClass,"change");					
+					}
+				
+					oldClass=nowClass;
+				 	
+				};
+			}
+			
+//			执行切换状态及显示效果
+			function actionMetu(obj){
+				var begin=obj.offsetHeight;
+//					切换高度
+				toggleClass(obj,"change");	
+//					获取结束后高度
+				var end=obj.offsetHeight;
+				
+//				console.log(begin+","+end);
+				
+//					使高度再回到初始值					
+				obj.style.height=begin+"px";
+				
+				move(obj,end,10,"height",function(){
+//					动画执行完后,内联样式不能存在,使属性变成空
+				obj.style.height="";
+						
+				})
+			
+			}
+		}	
+		</script>
+	</head>
+	<body>
+		<div id="d1">1</div>
+		<div id="d2">2</div>
+		<div id="d3">3</div>
+		<div id="d4">4</div>
+	</body>
+</html>
+
+<!--总结:
+1.先创建4个div点击函数
+2.点击函数实现高度变化,调用toggle函数实现,toggle函数(增删class名称,改变div样式)
+3.使用move动画效果函数与toggle函数组合,实现切换动画效果,move函数(创建定时器,用定时器实现属性变化obj.style[attr])
+4.每次点击完后,保留该元素节点为全局变量,当该元素节点与执行节点不一致时,判断上一个元素节点存在增加的class时,执行动画切换函数-->

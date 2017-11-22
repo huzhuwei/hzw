@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx{
+				width: 200px;
+				height: 100px;
+				background-color: yellow;
+			}
+			#sp{
+				background-color: #bfa;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				
+				var bx=document.getElementById("bx");
+				bx.onclick=function(event){
+					event=event||window.event;
+					event.cancelBubble=true;
+//					取消父级元素的冒泡事件
+					
+					alert("我是div");
+					
+				}
+				var sp=document.getElementById("sp");
+				sp.onclick=function(event){
+					alert("我是span");
+					event=event||window.event;
+					event.cancelBubble=true;
+				}
+//				var bd=document.getElementById("bd");
+				document.documentElement.onclick=function(){
+					alert("我是body");
+				}
+			}
+//			子元素触发事件,会触发父级元素同事件响应,叫冒泡事件Bubble
+		</script>
+	</head>
+	<body id="bd">
+		<div id="bx">我是div
+			<span id="sp">
+			我是span	
+			</span>
+		</div>
+	</body>
+</html>

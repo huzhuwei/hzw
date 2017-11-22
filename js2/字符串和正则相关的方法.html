@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var str1="1adwad2dadg";
+			var result=str1.split("d");
+//			以d字母拆分成数组
+			console.log(result);
+			result=str1.split(/[A-z]/);
+//			把字母都拆掉
+			console.log(result);
+			
+//			search()  搜索字符串中是否含有指定内容
+//			如果搜索到,返回第一个索引,如果搜不到,返回-1
+//			设置全局查询无效
+			str="hello abc aec afc"
+			result=str.search("abc");
+			console.log(result);
+			result=str.search(/a[bef]c/);
+			console.log(result);
+			
+//			match()根据正则表达式,从一个字符串中将符合条件的内容提取出来
+//			默认提取有一个,可以设置全局匹配模式/g  返回一个数组
+			str="1dwjaid1idjiafhh2dja";
+			result=str.match(/[A-z]|[0-9]/g);
+			console.log(result);
+			console.log(result[0]);
+			
+//			replace()替换  将指定的内容替换成新的内容   默认只会替换第一个,不影响原字符串
+			result=str.replace(1,2);
+//			把字符串的1替换成2
+			result=str.replace(/1/gi,2);
+//			设置全局匹配模式
+			console.log(result);
+			result=str.replace(/[A-z]/gi,"");
+//			删掉字母
+			console.log(result);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

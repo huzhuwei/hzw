@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#img{
+				width: 200px;
+				height: 200px;
+			}
+			#canvas{
+				background-color: #8FBC8F;
+			}
+		</style>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			
+		
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext('2d');
+			var img = document.getElementById("img");
+//			兼容其他浏览器
+			img.onload=function(){
+				
+				cv.drawImage(img,50,50,100,100);
+//				cv.drawImage(img,50,50);
+//				最后两个参数设置图片的大小 可以不写
+				
+			}
+
+		})	
+		</script>
+	</head>
+	<body>
+		<img src="img/1.jpg" id="img"/>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		<img src="img/123.jpg"/>
+	</body>
+</html>

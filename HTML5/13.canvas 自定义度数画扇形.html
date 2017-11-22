@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="txt" value="" />
+		<input type="button" name="" id="btn" value="确定" />
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var btn = document.getElementById("btn");
+			var txt = document.getElementById("txt");
+			var a;
+			btn.onclick=function(){
+				a=txt.value;
+				console.log(a);			
+				var cv = canvas.getContext('2d');	
+				cv.moveTo(100,100);
+	//			设置起点
+				cv.arc(100,100,150,0*Math.PI/180,a*Math.PI/180);
+	//			获取圆弧两点
+				cv.fillStyle='yellow';
+	//			填充  
+				cv.fill();
+			}
+		
+		
+		</script>
+	</body>
+</html>

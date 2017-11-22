@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			header{
+				width: 1000px;
+				height: 50px;
+				background-color: greenyellow;
+				margin: 0 auto;
+				
+			}
+			nav{
+				width: 1000px;
+				height: 30px;
+				background-color: deeppink;
+				margin: 10px auto;
+			}
+			.main{
+				margin: 0 auto;
+				width: 1000px;
+				height: 300px;
+			}
+			aside{
+				width: 220px;
+				height: 300px;
+				background-color: blueviolet;
+				float: left;
+				
+			}
+			article{
+				float: right;
+				width: 770px;
+				height: 300px;
+				background-color: darkseagreen;
+			}
+			footer{
+				margin: 0 auto;
+				width: 1000px;
+				height: 30px;
+				background-color: lightgreen;
+				margin-top:10px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header></header>
+		<!--头部-->
+		<nav></nav>
+		<!--导航-->
+		<div class="main">			
+			<aside>
+				请选择地区
+				<br />
+				<select name="">
+					<optgroup label="江西">
+					<option value="">萍乡</option>
+					<option value="">南昌</option>
+					<option value="">赣州</option>
+					<option value="">上饶</option>	
+					</optgroup>
+					<!--分组-->
+					
+					<optgroup label="湖南">
+					<option value="">长沙</option>
+					<option value="">邵阳</option>
+					<option value="">湘潭</option>
+					</optgroup>
+				</select>
+				
+				<progress max='100' value='33'></progress>
+				<!--进度条-->
+				
+				<meter min="0" max="100" low="30" high="90" value="33"></meter>
+				<!--密码强度展示-->
+			</aside>
+			<!--侧边栏-->
+			<article>
+				<h1>水果的优点</h1>
+				发表时间:<time pubdate="2017-8-15">2017-8-15</time>
+				<!--pubdate一般表示发布时间-->
+				会议时间在<time datetime="2017-8-16">2017-8-16</time>
+				<!--datetime一般表示一般性时间-->
+				
+				<section>
+				<p>苹果<strong>熟了才好吃</strong>,不熟<mark>不好吃</mark> 苹果熟了<em>才好吃</em>,不熟不好吃<ins>苹果熟了才好吃</ins>,不熟不好吃<del>苹果熟了</del>才好吃,不熟不好吃苹果熟了才好吃,不熟不好吃苹果熟了才好吃,不熟不好吃</p>
+				<!--<mark>突出文本-->
+					<!--ins  下划线-->
+					<!--del  删除线-->
+					<!--<i></i>  	<em></em> 斜体-->
+					<!--<b></b>  <strong></strong> 粗体-->
+					<!--<small></small>  字体变小-->
+					<!--<big></big>  字体变大-->
+					<!--<city>《论语》</city>  表示参考内容-->
+					<!--<q>你说什么</q>  双引号-->
+					<!--<sup>2</sup>   2次方-->
+					<!--h<sub>2</hsub>o;-->
+ 				</section> 
+				<!--块区域-->
+				
+			</article>
+			<!--文章区-->
+			
+			
+		</div>
+		<footer>
+			
+			<address>南昌市东湖区樟树林</address>
+			<!--地址-->
+			
+			
+			<!--代码展示-->
+			<pre>
+				<code>
+				  alert('你好');
+				</code>
+			</pre>
+			<!--代码展示  不会去掉空格-->
+		</footer>
+		<!--尾部-->
+
+		<dl>
+			<dt>武松</dt>
+			<dd>景阳冈打虎英雄</dd>
+		</dl>
+		<!--定义-->
+		
+	</body>
+</html>

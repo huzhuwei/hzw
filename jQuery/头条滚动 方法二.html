@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				setInterval(function(){
+					$("ul li").first().height(0);
+//					设置第一个li的高度为0
+					$("ul").append($("ul li").first());
+//					让第一个li放到最后一个位置
+					$("ul li").last().animate({'height':'30px'},500);
+//					最后一个li慢慢出现
+					
+				},1000)
+
+			})
+			
+		</script>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+			}
+			#news{
+				width: 400px;
+				height: 30px;
+				border: 3px solid red;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+				top: 100px;
+			}
+			ul{
+				list-style: none;
+				position: absolute;
+				bottom: -30px;
+				/*让li从第三个出现*/
+			}
+			li{
+				width: 400px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="news">
+			<ul>
+				<li style="background-color: red;">习近平：价格要听市场的</li>
+				<li style="background-color: green;">十九大专题 李克强	王岐山</li>
+				<li style="background-color: blueviolet;">张高丽参加十九大代表团讨论</li>
+				<li style="background-color: yellow;">十九大首场记者会：“严”字何解？数字说话！</li>				
+				
+			</ul>
+		</div>
+	</body>
+</html>

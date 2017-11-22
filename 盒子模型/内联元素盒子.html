@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				background-color: yellow;
+			}
+			.s1{
+				width: 100px;
+				height:100px;	
+				padding: 100px;
+				margin:100px;
+				
+				/*padding-right:100px;*/					
+			}
+			/*无效  内联元素不能设置width和height*/
+			/*内联元素可以设置水平方向的内边距
+			 可以设置垂直方向内边距，但是不会影响页面布局*/
+			/*内联元素可以设置边框,但是垂直的边框不会影响到页面的布局*/
+			/*水平方向外边距不会重叠  内联元素不支持垂直外边距*/
+		</style>
+	</head>
+	<body>
+		<span class="s1">你好吗</span>
+		<div class="box1">你好吗</div>
+	    <span>你好吗</span>
+	    <span>你好吗</span>
+	    <span>你好吗</span>
+	    <span>你好吗</span>
+	</body>
+</html>

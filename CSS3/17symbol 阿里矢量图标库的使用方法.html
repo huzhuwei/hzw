@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/symbol.css"/>
+		<!--synbol文件可以通用-->
+		<script src="js/iconfont.js" type="text/javascript" charset="utf-8"></script>		
+		<!--iconfont.js文件未同时下载不可通用  打开文件搜索#可自定义颜色-->
+		<style type="text/css">
+			.meinv{
+				font-size: 100px;
+			}
+			.gouwuche{
+				font-size: 100px;
+				font-style: italic;
+				color: orange;
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>symbol方式引入阿里矢量图标</h1>
+		<!--1.支持彩色图标
+		2.兼容ie9以上的浏览器
+		-->
+		<svg class="icon meinv" aria-hidden="true">
+    		<use xlink:href="#icon-iconmoban-copy"></use>
+		</svg>
+		
+		<svg class="icon meinv" aria-hidden="true">
+    		<use xlink:href="#icon-meinvxiezhen-copy"></use>
+		</svg>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		var all=document.getElementsByTagName("a");
+			for(i=0;i<all.length;i++){
+				all[i].onclick=function(){
+					var tr=this.parentNode.parentNode;
+					var name=tr.childNodes[0].innerHTML;
+					var flag=confirm("是否删除"+name);
+					if(flag){
+						tr.parentNode.removeChild(tr);
+					}
+					return false;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

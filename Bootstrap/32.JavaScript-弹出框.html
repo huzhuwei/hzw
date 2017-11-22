@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript">
+//			在一个页面上一次性初始化所有弹出框的方式是通过 data-toggle 属性选中他们：
+			$(function () {
+//			  $('[data-toggle="popover"]').popover();
+			  $('#hd').popover();
+//			  双击触发事件
+			  $('#hd').on('hidden.bs.popover', function () {
+  // do something…
+  				alert('nihao');
+//				show.bs.popover
+//				shown.bs.popover
+//				hide.bs.popover
+//				hidden.bs.popover
+//				inserted.bs.popover
+			  })
+			  $('#myAlert').on('closed.bs.alert', function () {
+  // do something…
+  				alert("关闭")
+			  })
+			})
+			
+		</script>
+		<style type="text/css">
+			body{
+				padding: 50px;
+			}
+			img{
+				width:100px;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="hd" type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">点我弹出/隐藏弹出框</button>
+		<hr />
+		<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+		  Popover on 左侧
+		</button>
+		
+		<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+		  Popover on 顶部
+		</button>
+		
+		<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+		sagittis lacus vel augue laoreet rutrum faucibus.">
+		  Popover on 底部
+		</button>
+		
+		<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+		  Popover on 右侧
+		</button>
+		<hr />
+		<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">可消失的弹出框</a>
+		
+		<hr />
+		
+		<div class="alert alert-danger "id="myAlert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			前方有危险
+			<img src="img/1.jpg" />
+		</div>
+	</body>
+</html>

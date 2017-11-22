@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			slice()用来从数组中提取指定元素,不改变原数组
+		
+			var arr=["孙悟空","猪八戒","沙和尚"];
+//			slice用来从数组中提取指定元素,不改变原数组
+			var arr1 =arr.slice(0,1);
+//			0<=元素范围<1;可以传负值
+			var arr2 =arr.slice(2);
+			console.log(arr);
+			console.log(arr1);
+			console.log(arr2);
+			console.log(typeof arr2);
+			console.log(arr2[0]);
+			var arr1 =arr.slice(0,-1);
+//			可以传负值
+			console.log(arr1);
+
+//			splice()用来从数组中删除指定元素,改变原数组
+//			参数  第一个表示起始位置  第二个表示删除数量  第三及后面  表示在删除位置插入新的元素
+			arr.splice(1,1,"牛魔王","铁扇公主");
+			console.log(arr);
+			arr.splice(1,2);
+			console.log(arr);
+			console.log(arr.length);			
+			console.log(arr[1]);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

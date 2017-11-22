@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(){
+				var a=123;
+//				使用var关键字声明的变量,会在所有的代码执行之前被声明,不会赋值,在函数中的声明对外不影响
+			}
+//			fun()
+			console.log(window.a);
+			var a=123;
+			fun()
+			function fun(){
+				console.log(a);
+			}
+//			函数声明在执行之前就创建好了
+//			var fun2= function(){
+//				console.log("我是fun2函数");
+//			}
+//			函数表达式不会提前创建
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

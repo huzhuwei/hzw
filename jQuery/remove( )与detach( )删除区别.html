@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var obj;
+				$("#btn1").click(function(){
+//					移除元素  同时移除点击事件
+					obj=$("h1").remove();
+				})
+				$("#btn3").click(function(){
+					$("h1").empty();
+//					清空元素文本内容
+				})
+				$("h1").click(function(){
+					alert('ok');
+				})
+				$("#btn2").click(function(){
+					$("p").after(obj);
+//					清空元素文本内容
+				})
+				
+				$("#btn4").click(function(){
+					obj=$("h1").detach(obj);
+//					移除元素  不移除点击事件
+//					
+				})
+			})
+		</script>
+		<style type="text/css">
+			h1{
+				width: 100px;
+				height: 50px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn3" value="清空" />
+		
+		<input type="button" name="" id="btn1" value="删除1" />
+		<input type="button" name="" id="btn4" value="删除2" />
+		<input type="button" name="" id="btn2" value="恢复" />
+		<p></p>
+		<h1>点我</h1>
+		
+		
+	</body>
+</html>

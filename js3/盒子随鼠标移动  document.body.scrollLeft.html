@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx1{
+				height: 100px;
+				width: 100px;
+				background-color: red;
+				position: absolute;
+			}
+			#bx2{
+				height: 200px;
+				width: 200px;
+				background-color: yellow;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var bx1=document.getElementById("bx1");
+				document.onmousemove=function(event){
+//					文档流内鼠标移动事件
+					event=event||window.event;
+					
+//					方法一
+//					var lt=event.pageX+"px";
+//					var tp=event.pageY+"px";
+////					page在IE8中不支持
+					
+//					方法二
+					var ltm=document.body.scrollLeft||document.documentElement.scrollLeft;	
+					var tpm=document.body.scrollTop||document.documentElement.scrollTop;
+//					选择在body或html框内获取滚动长度
+					var lt=event.clientX;
+					var tp=event.clientY;
+//					获取显示窗口距离
+					
+					bx1.style.left=lt+ltm+"px";
+					bx1.style.top=tp+tpm+"px";
+				}
+				var bx2=document.getElementById("bx2")
+				bx2.onmousemove=function(){
+					event=event||window.event;
+					event.cancelBubble=true;
+//					取消冒泡 使红框无法进入黄框
+				}
+			}
+		</script>
+	</head>
+	<body style="height: 1000px;">
+		<div id="bx1"></div>
+		<div id="bx2"></div>
+	</body>
+</html>

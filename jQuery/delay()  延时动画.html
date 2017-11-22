@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("img").animate({'top':'0px'},3000,function(){
+//					setTimeout(function(){
+//						$("img").animate({'top':'-300px'},2000)
+//				},2000);
+
+//				方法二  delay()  延时动画
+					$("img").delay(3000).animate({'top':'-300px'},2000);
+				})
+			})
+		</script>
+		<style type="text/css">
+			
+			img{
+				width: 200px;
+				height: 200px;
+				display: block;
+				margin: 0 auto;
+				position: relative;
+				top: -200px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.jpg"/>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="200" height="200"></canvas>
+		<script type="text/javascript">
+			var canvas =document.getElementById('canvas');
+			var cv = canvas.getContext('2d');
+			cv.fillStyle = '#90EE90';
+			cv.fillRect(0,0,200,200);
+			var allDate = cv.getImageData(0,0,200,200);
+			console.log(allDate.data.length);
+			for(var i=0;i<allDate.data.length;i++){
+//				设置数组里的数随机0-255的随机整数
+				var num = Math.floor(Math.random()*256);
+				allDate.data[i] = num;
+				
+			}
+			cv.putImageData(allDate,0,0);
+		</script>
+	</body>
+</html>

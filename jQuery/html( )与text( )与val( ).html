@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 200px;
+				height: 50px;
+				border: 1px solid black;
+			}
+			
+		</style>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					var con = $("#p1").html();
+					$("#p1").html($("#p2").html());
+					$("#p2").html(con);
+//					console.log(typeof con);
+//					获得元素所有内容  包含span
+					var can=$("#p2").html();
+					console.log(can);
+				
+//					获得元素文本内容
+					var can=$("#p2").text();
+					
+					
+				})
+				
+				$("#btn1").click(function(){
+					
+					$("#p2").text('我是更改了的');
+					
+				})
+				
+				$("#btn2").click(function(){
+					
+					var tt=$("#tt").val();
+//					获得文本内容
+					console.log(tt);
+					
+					
+				})
+//				设置文本内容
+				$("#tt").val('请输入文本');
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="button"  id="btn" value="内容互换" />
+		<input type="button"  id="btn1" value="更改内容" />
+		<p id="p1">fjoawjfioajfiowajfoajiof</p>
+		<p id="p2"><span>11</span></p>
+		<input type="text" name="" id="tt" value="" />
+		<br />
+		<input type="button"  id="btn2" value="获得内容" />
+	</body>
+</html>

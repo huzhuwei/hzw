@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var a=+prompt("请输入a");
+			var b=+prompt("请输入b");
+			var c=+prompt("请输入c");
+			if(a>c && b>c){
+				if(b>a){
+				alert(c+","+a+","+b);
+				}else{
+				alert(c+","+b+","+a);	
+				}
+				
+			}else if(b>a && c>a){
+				if(b>c){
+				alert(a+","+c+","+b);	
+				}
+				else{
+				alert(a+","+b+","+c);	
+				}
+				
+			}else{
+				if(a>b && c>b){
+				if(a>c){
+				alert(b+","+c+","+a);	
+				}else{
+				alert(b+","+a+","+c);	
+				}
+    			}
+			}
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

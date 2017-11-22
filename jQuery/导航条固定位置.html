@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				margin: 0 auto;
+				width: 1039px;
+			}
+			.img1.run{
+				position: fixed;
+				/*设置居中*/
+				/*left: 50%;
+				margin-left: -518px;*/
+			}
+			img{
+				display: block;
+				/*行内元素会产生缝隙*/
+			}
+		</style>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$(document).scroll(function(){
+//					浏览器滚动事件  没有''
+					var a = $(document).scrollTop();
+//					获得文档流滚动距离  没有''
+					document.title=a;
+					if(a>139){
+						
+						$(".img1").addClass('run');
+						
+					}else{
+						
+						$(".img1").removeClass('run');
+						
+					}
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			
+
+			<img src="img/导航条.png"/ class="img1">
+			<img src="img/内容区.png"/>
+		
+		</div>
+		
+	</body>
+</html>

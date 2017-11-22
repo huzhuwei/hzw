@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#box p').eq(2).css({'color':'red','font-size':'35px'});
+//				找索引为2的p标签  索引从0开始
+
+				$('#box p').filter('.one').css({'color':'red','font-size':'25px'});
+//				找出p标签class是one的  注意.
+
+				$('#box p').has('span').css({'color':'red','font-size':'25px'});
+//				找出含有span标签的p元素
+
+//				$('#box p').not('.no').css({'color':'red','font-size':'25px'});
+//				除去class为no的p  注意.
+				
+				$('#box p').slice(4,6).css({'color':'red','font-size':'25px'});
+//				选出(4,6]的p元素  不含4含6
+
+//			给所有的p标签添加点击事件
+			$('#box p').click(function(){
+//				检查p标签中含有class为one的值
+				var re = $(this).hasClass('one');
+				if(re){
+					alert('有个one的class名');
+				}else{
+					alert('没有one的class名');					
+				}
+				
+//				检查p标签中含有id为two的值 注意#符				
+				var ae = $(this).is('#two');
+				if(ae){
+					alert('有个two的id名');
+				}else{
+					alert('没有two的id名');					
+				}				
+			})
+			
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>我是后盾0</p>
+			<p class="one">我是后盾1</p>
+			<p id="two">我是后盾2</p>
+			<p>我是后盾3</p>
+			<p><span>我是后盾4</span></p>
+			<p>我是后盾5</p>
+			<p class="no">我是后盾6</p>
+			<div>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+			</div>
+		</div>
+	</body>
+</html>

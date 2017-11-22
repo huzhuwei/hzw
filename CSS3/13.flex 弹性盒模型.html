@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin:0;
+			}
+
+			#hd{
+				width: 80%;
+				border: 4px solid orange;
+				margin: 10px auto;
+				display: flex;
+				/*flex里的项目是不脱离文档流的*/
+				/*flex的项目如果总宽度超过父级元素的宽度,那么加给项目的宽度就无效了,每个项目的宽度会自动均分*/
+				flex-direction: row-reverse;
+				/*内元素反向水平排列*/
+				flex-direction: column;
+				/*垂直排列*/
+				flex-direction: column-reverse;
+				/*反向垂直排列*/				
+				/*flex-wrap: wrap;*/
+				/*按实际宽度自动换行*/
+				/*flex-wrap: wrap-reverse;*/
+				/*按实际宽度自动反向换行*/
+				flex-direction: row;
+				/*默认水平排列*/
+				align-items: flex-end;
+				/*贴着底部排列*/
+				align-items: center;
+				/*交叉轴中点排列*/
+				align-items: baseline;
+				/*默认效果*/
+				align-items: stretch;
+				/*如果元素没有设置高度  将自动占满整个容器的高度*/
+				align-content: space-between;
+			}
+			#hd >div{
+				width: 180px;
+				height: 200px;
+				background-color: cadetblue;
+				border: 1px solid palegoldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="hd">
+			<div style="height: 300px;">1</div>
+			<div style="height: 250px; order: 10;flex: 2;">2</div>
+			<!--order默认为0  设置越大排越后-->
+			<!--flex默认为1  设置为2则比其他元素大一倍-->
+			<div style="height: 220px;">3</div>
+		</div>
+	</body>
+</html>

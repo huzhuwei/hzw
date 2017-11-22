@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			#div1{
+				/*width:200px;*/
+				height:200px;
+				background-color: red;
+				border: 10px solid blue;
+				/*background-color: red!important;*/
+				/*!important使js无效*/
+				padding: 10px;
+				margin: 10px;
+			}
+		</style>
+		
+		<script>
+			window.onload=function(){
+				
+				var bt=document.getElementById("bt");
+				var div1=document.getElementById("div1");
+				var op=div1.offsetParent;
+				console.log(op.id);
+
+//				offsetParent 获取当前的定位父元素
+
+				console.log(div1.offsetLeft)
+//				返回距离父元素长度				
+//				父元素需开启relative  如没有将指定为body元素
+				
+				bt.onclick=function(){
+					div1.style.width="300px";
+					div1.style.backgroundColor="yellow";
+//					通过js修改元素的样式;
+//					语法:元素.style.样式名="样式值";
+//					如果名称中有-,是不合法的,使用驼峰命名法改变下
+//					去掉-,然后将-后面的字母大写
+//					DOM操作内联样式,优先级最高
+					alert(div1.style.width);
+//					读取样式值,只能读取内联样式，有px单位
+					
+					console.log(div1.clientHeight);
+//					读取样式值,无px单位
+//					获取内边距及内容区长度  可见的
+//					
+//					scollHeight  获取滚动范围高度
+//					scollLeft  获取水平滚动的距离
+//					clientHeight==scollHeight-scollTop
+//					可见高度=滚动高度-已滚动高度
+//					说明垂直滚动条滚动到底了
+					alert(div1.offsetWidth)
+//					读取样式值,都能读取到，无px单位
+//					获取内边距及内容区长度及边框长度  整个大小
+//					offsetHeight同理
+
+//					alert(div1.currentStyle.width);
+//					获取内边距及内容区长度
+//					元素.currentStyle.样式
+//					能获取任何样式值,
+//					只支持IE**
+//					获取元素当前显示的样式
+//					语法:  元素节点.currentStyle.样式名
+//					如果没有设置样式,则获取默认值
+				
+//					getComputedStyle(元素,null).样式
+//					获取内边距及内容区长度
+//					在其他浏览器中可以
+//					IE8及以下不支持**
+//					getComputedStyle()
+//					获取真实值,比如没有设置width,他不会获取auto,而是一个可见长度
+//					需要两个参数:
+//						第一个:要获取样式的元素
+//						第二个:可以传递一个伪元素,一般为null
+					var obj =getComputedStyle(div1,null).width
+					alert(obj);
+					alert("高度为"+getStyle(div1,"height"));
+				
+				function getStyle(obj,name){
+					if(window.getComputedStyle){	
+//						普通浏览器方式,不支持IE8及以下 
+//						使用对象的属性判断,不会报错
+//						用形参判断,会报错
+						return getComputedStyle(obj,null)[name];
+					}else{
+//						IE方式
+						return obj.currentStyle[name];	
+					}
+//					return window.getComputedStyle?getComputedStyle(obj,null)[name]:obj.currentStyle[name];
+//					效果同上
+				}
+			}
+			}
+		</script>
+		
+	</head>
+	<body id="body">
+		<button id="bt">按钮</button>
+		<div >
+		<div id="div1"></div>
+		</div>
+	</body>
+</html>

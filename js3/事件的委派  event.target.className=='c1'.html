@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#ul1{
+				/*background-color: yellow;*/
+				display: inline-block;
+			}
+			#btn{
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				
+				var btn=document.getElementById("btn");
+				var ul1=document.getElementById("ul1");
+				btn.onclick=function(){
+//					方法一
+					ul1.innerHTML+="<li><a href='javascript:;'class='c1'>我是超链接一</a></li>";
+					
+//					方法二
+//					var li=document.createElement("li");
+//					li.innerHTML="<a href='javascript:;'>我是超链接一</a>";
+//					ul1.appendChild(li);
+				}
+				ul1.onclick=function(event){
+					
+					if(event.target.className=="c1")
+//					event中的target表示触发事件的对象
+					alert("我是超链接");
+					alert(event);
+					alert(this);
+					
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<ul id="ul1">
+			<li><a href="javascript:;" class="c1">我是超链接一</a></li>
+			<li><a href="javascript:;"class="c1">我是超链接二</a></li>
+			<li><a href="javascript:;"class="c1">我是超链接三</a></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" list="dlt"/>
+		<datalist id="dlt">
+			<option value="">上海</option>
+			<option value="">深圳</option>
+			<option value="">广州</option>
+			<option value="">南昌</option>
+		</datalist>
+		<!--只适用于火狐-->
+		<input type="text" name="" id="" value="" autofocus="autofocus"/>
+		<!--自动获得文本焦点-->
+		
+		<form action="" id="biaodan">
+			用户名:<input type="text" name="" id="" value="" /><br />
+			密码:<input type="password" name="" id="" value="" /><br />	
+
+			<input type="text"  placeholder="请输入4个数字" pattern="\d\d\d\d"/>
+			<!--pattern正则 不用判断边界-->
+			<br /><input type="text" required />
+			<!--required强制要求文本框不能为空-->
+			<br /><input type="submit" name="" id="" value="提交" />
+			
+		</form>
+		
+		<input type="email" name="" id="" value="" form="biaodan"/>
+		<!--与form表单相关联-->
+		
+		<input type="file" multiple="multiple" id="" value="" />
+		<!--multiple可以选中多个文件上传-->
+		
+		<input type="text" placeholder="请输入内容"/>
+		<!--placeholder文本提示-->
+		
+
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+//				$('#box p').css('color','red');
+//				单个属性设置中间需用,
+//				$('#box p').css({'color':'blue','font-size':'25px'});
+//				多个属性设置中间需用:
+
+//				$('#box p:first').css({'color':'blue','font-size':'25px'});
+//				选择#box子代p的第一个p元素  div的第一个子元素必须是p标签
+
+				$('#box p:first-of-type').css({'color':'blue','font-size':'25px'});
+//				选择#box子代p的第一个p元素  div的第一个子元素不用是p标签
+
+				$('#box p:nth-child(5)').css({'color':'yellow','font-size':'25px'});
+//				选择#box子代p的第一个p元素  div的第5个子元素必须是p标签  索引从1开始
+
+//				$('#box p:last').css({'color':'blue','font-size':'25px'});
+//				选择#box子代p的最后一个p元素
+
+//				$('#box p:not(.one)').css({'color':'blue','font-size':'25px'});
+//				选择#box子代, 排除掉class为one的p元素
+
+//				$('#box p:even').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列是偶数的p元素  包含0
+
+//				$('#box p:odd').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列是奇数的p元素  
+
+//				$('#box p:eq(3)').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列是3的p元素
+
+//				$('#box p:gt(3)').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列大于3的p元素  
+
+//				$('#box p:lt(3)').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列小于3的p元素  
+
+//				$('#box p:contains(盾3)').css({'color':'blue','font-size':'25px'});
+//				选择#box子代序列文本内容包含盾3的p元素  
+
+//				$('#box p:only-child').css({'color':'blue','font-size':'25px'});
+//				选择是独生子的p标签   不能含有其他子元素
+
+//				$('#box p:only-of-type').css({'color':'blue','font-size':'25px'});
+//				选择是唯一的p标签   只能含有一个p标签
+
+//				$('#box p:empty').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box子代文本内容为空的p元素  
+
+				$('#box p:has(span)').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box子代p元素包含span
+
+				$('#box p:hidden').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box子代p元素被隐藏的
+
+				$('#box p[class]').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box有class属性的p元素
+
+				$('#box p[class^=o]').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box有class属性为o开头的p元素
+
+				$('#box p[class$=e]').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box有class属性为e结尾的p元素
+
+				$('#box p[class*=un]').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box有class属性为含有un的p元素
+
+				$('#box p[class*=un][class*=e]').css({'height':'50px','width':'50px','background':'red'});
+//				选择#box有class属性为含有un,e的p元素
+
+//				$('#box>p').css({'color':'blue','font-size':'25px'});
+//				#box的后代选择器
+
+//				$('.one').css({'color':'blue','font-size':'25px'});
+//				选择class是one的元素
+
+//				$('.one+p').css({'color':'blue','font-size':'25px'});
+//				选择class是one的元素的下一个兄弟元素p
+//				p+a.link  紧邻在p标签后面的class为link的a标签
+				
+//				$('.one~p').css({'color':'blue','font-size':'25px'});
+//				选择class是one的元素的后面所有兄弟元素p  包含one
+			})
+		</script>
+	</head>
+	<body>
+		<!--div#box>p{我是后盾$}*6-->
+		<div id="box">
+			<span>我是后盾0</span>			
+			<p>我是后盾2</p>
+			<p class="one">我是后盾1</p>
+			<p class="nc">我是后盾3</p>
+			<p>我是后盾4</p>
+			<p>我是后盾5</p>
+			<p><span>我是后盾5</span></p>
+			<p>我是后盾6</p>
+			<p class="t"></p>
+			<p></p>
+			
+			<!--div>p{我们也是p标签}*3-->			
+			<div>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+			</div>
+		</div>
+	</body>
+</html>

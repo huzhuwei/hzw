@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			img{
+				width: 300px;
+				height: 300px;
+				padding:10px;
+				/*不影响图片大小*/
+			}
+			ul{
+				list-style: none;
+				position: absolute;
+				/*width: 1100px;*/
+				/*left: -320px;*/
+				left: 0px;
+			}
+			li{
+				
+				float: left;
+			}
+			#bx1{
+				height:320px;
+				width: 320px;
+				background-color: greenyellow;
+				overflow: hidden;
+				margin: 0 auto;
+				position: relative;
+		
+				
+				
+			}
+			#aBox a{
+				background-color: red;
+				float: left;
+				width: 15px;
+				height: 15px;
+				margin-left: 8px;
+				opacity: 0.5;
+				filter:alpha(opacity=50);
+				/*设置兼容IE*/
+												
+			}
+			
+			#aBox a:hover{
+				background-color: black;				
+			}
+			#aBox{
+				position: absolute;
+				/*设置定位让盒子浮在最上面*/
+				bottom: 15px;		
+				/*background-color: black;*/
+			
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/move tools.js"></script>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+		
+		window.onload=function(){
+			var num=0;
+			var imgArr=document.getElementsByTagName("img");
+			var u1=document.getElementById("u1");
+			u1.style.width=imgArr.length*320+"px";
+//			根据图片的多少自动设置ul的宽度	
+
+			var bx1=document.getElementById("bx1");
+			var aBox=document.getElementById("aBox");
+			aBox.style.left=(bx1.offsetWidth-aBox.offsetWidth) / 2+"px";
+//			根据点的个数设置居中位置
+
+			var allA=document.getElementsByTagName("a");
+			var li=document.getElementsByTagName("li");
+			allA[0].style.backgroundColor="black";
+			for(var i=0;i<allA.length;i++){
+				allA[i].index=i;
+//				为数组设置index属性
+//				setInterval()
+//				点击函数
+				allA[i].onclick=function(){
+					clearInterval(timer);
+					
+//					alert(this.index);
+//					输出每个对象的index
+					num=this.index;
+//					num需要设置为全局变量  与自动切图相关联
+//					图片跳转  方法一
+//					u1.style.left=-320*num+"px";
+					
+					move(u1,-320*num,50,"left",function(){
+						imgAutoChange();
+					
+					});
+					
+					
+					setAcolor();
+
+				}
+			}
+			
+			
+//			设置a标签的切图效果
+			function setAcolor(){
+				if(num==imgArr.length-1){
+					num=0;
+					u1.style.left=0;
+				}
+				
+				for(var i=0;i<allA.length;i++){
+					allA[i].style.backgroundColor="";
+//					设置a标签的内联样式为空,调用内部样式表,避免设置内联颜色覆盖a:hover属性
+				}
+
+					allA[num].style.backgroundColor="black";	
+//					console.log(num);
+					
+			}
+			
+//			自动切图函数
+			function imgAutoChange(){
+				
+				timer=setInterval(function(){
+
+					num++;
+					num%=imgArr.length;
+					move(u1,-320*num,50,"left",function(){					
+						setAcolor();						
+					});					
+				},3000)
+				
+			}
+			imgAutoChange();
+		}		
+		
+		</script>
+	</head>
+	<body>
+		<div id="bx1">
+			<ul id="u1">
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+				<li><img src="img/5.jpg"/></li>
+				<li><img src="img/1.jpg"/></li>
+			
+			</ul>
+			
+			<div id="aBox">
+				<a href="javascript:;"></a>
+				<!--设置a标签不跳转 防止刷新网页-->
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+		
+			</div>
+					
+		</div>
+		
+
+	</body>
+</html>

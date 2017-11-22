@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cs{
+				background-color: 
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="cs" width="300" height="300"></canvas>
+		<!--可直接设置宽高  不带单位-->
+		
+		<script type="text/javascript">
+			var cs =document.getElementById('cs');
+			
+			var cv = cs.getContext('2d');
+//			获得绘画环境
+			cv.fillStyle='yellow';
+			cv.fillRect(0,0,800,800);
+			
+			
+			cv.fillStyle='#f00000';
+//			颜色要在fillRect之前设置
+			cv.fillRect(100,100,50,50);
+//			距离左侧100  上面100   边长为50的正方形   绘制实心图形
+			cv.clearRect(100,100,20,20);
+//			清除实心图形
+
+
+			cv.strokeStyle='#f00000';
+			cv.lineWidth='5';	
+//			设置边宽
+//			绘制空心图形
+			cv.strokeRect(200,200,50,50);
+//			注意编写先后顺序
+			
+//		部分浏览器右键点击可以保存为图片  ie不支持
+		</script>
+		
+	</body>
+</html>

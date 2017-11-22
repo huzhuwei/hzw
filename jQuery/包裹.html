@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					$("p").unwrap();
+					
+//					给p标签包裹上div标签
+					$("p").wrap('<div class="d1"></div>');
+					setTimeout(function(){
+						$("p").unwrap();
+//						取消包裹    去除父级上一级元素
+					},2000)
+				})
+			
+				$("#btn1").click(function(){
+					$("p").unwrap();
+					
+					$("p").wrapAll('<div class="d1"></div>');
+					
+				})
+				
+				$("#btn2").click(function(){
+					$("p").unwrap();
+//					包裹文本内容
+					$("p").wrapInner('<span class="d1"></span>');
+					
+				})
+				
+			})
+			
+		</script>
+		
+		<style type="text/css">
+			.d1{
+				background-color: yellowgreen;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<input type="button" name="" id="btn" value="包裹每一个" />
+		<input type="button" name="" id="btn1" value="一次包裹所有" />
+		<input type="button" name="" id="btn2" value="包裹文本内容" />
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+			}
+
+			Person.prototype.toString=function(){
+				return "Person[name="+this.name+",age="+this.age+"]";
+			};
+			var per1 = new Person("孙悟空",18);
+			var per2 = new Person("孙悟空",22);
+			var per3 = new Person("孙悟空",33);
+			var per4 = new Person("孙悟空",28);
+			var per5 = new Person("孙悟空",20);
+			
+			var per=[per1,per2,per3,per4,per5];
+			var por=[];
+			console.log(per);
+			for(i=0;i<per.length;i++){
+				if(per[i].age>20){
+					por.push(per[i]);
+				}
+			}
+			console.log(por);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

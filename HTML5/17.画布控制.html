@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: #90EE90;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		<script type="text/javascript">
+			var canvas =document.getElementById('canvas');
+			var cv = canvas.getContext('2d');
+			cv.strokeStyle='yellow';
+			cv.lineWidth='2';
+			cv.strokeRect(10,10,100,100);
+			
+//			cv.scale(2,2);
+////			使画出的图形数据扩大一倍
+//			cv.strokeRect(10,10,100,100);
+			cv.moveTo(0,0);
+			cv.lineTo(210,210);
+			cv.strokeStyle='black';
+			cv.stroke();
+		
+			cv.translate(200,200);
+//			平移图形
+			cv.strokeRect(10,10,50,50);
+		
+			cv.rotate(60*Math.PI/180);
+//			旋转
+			cv.strokeRect(10,10,50,50);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			var cs = document.getElementById("cs");
+			var cv = cs.getContext('2d');
+			cv.font=" 35px 微软雅黑";
+//			画实心
+//			cv.fillStyle="#8FBC8F";			
+//			cv.fillText('后盾人 人人做后盾',200,300);
+//			画空心
+			cv.strokeStyle="#8FBC8F";
+//			cv.textAlign='right';
+//			cv.textAlign='left';
+			cv.textAlign='center';
+//			设置段落水平位置
+			cv.textBaseline='bottom';
+//			设置段落垂直位置		
+//			cv.textBaseline='top';
+//			cv.textBaseline='middle'; 
+			var str = '后盾人 人人做后盾';
+			var re = cv.measureText(str).width;
+//			获得段落的宽度
+			console.log(re);
+			cv.strokeText(str,200,300,250);
+//			第四个参数设置段落的宽度
+			
+//			画辅助线
+			cv.beginPath();
+			cv.strokeStyle="#000000";
+			cv.moveTo(200,0);
+			cv.lineTo(200,600);
+			cv.lineWidth=2;			
+			cv.stroke();
+			
+//			画辅助线
+			cv.beginPath();
+			cv.strokeStyle="#000000";
+			cv.moveTo(0,300);
+			cv.lineTo(600,300);
+			cv.lineWidth=2;
+			cv.stroke();
+		})
+		
+		</script>
+		<style type="text/css">
+			#cs{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cs" width="600" height="600"></canvas>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box2{
+				width: 500px;
+				height: 100px;
+				background-color: red;
+			}
+			.box1{
+				width:200px;
+				height: 200px;
+				background-color: blue;
+				overflow:auto;
+			}
+			/*子元素会覆盖父元素,超过大小会在父元素以外显示*/
+			/*通过overflow 可以设置父元素如何处理溢出内容*/
+			 /*可选值:
+			  visib:默认值 ,默认不处理
+			  hidden 隐藏
+			  scroll 强制为父元素添加滚动条,通过拖动滚动条来查看完整内容*/
+			  /*auto 智能添加滚动条*/
+			  
+			  
+		</style>
+	</head>
+	<body>
+	 	<div class="box1">
+	 		<div class="box2">
+	 			
+	 		</div>
+	 	</div>
+	</body>
+</html>

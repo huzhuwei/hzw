@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			html, body {
+        		position: relative;
+        		height: 100%;       
+    		}
+    		
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--禁止手机缩放  移动端规则解析-->
+	</head>
+	<body>
+		<div class="flash">
+			<div class="swiper-container">
+        		<div class="swiper-wrapper">
+		            <div class="swiper-slide">Slide 1</div>
+		            <div class="swiper-slide">Slide 2</div>
+		            <div class="swiper-slide">Slide 3</div>
+		            <div class="swiper-slide">Slide 4</div>
+		            <div class="swiper-slide">Slide 5</div>	           
+        		</div>       	
+        	<!-- Add Pagination -->
+        	<div class="swiper-pagination"></div>
+    	</div>
+		 <script>
+		    var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		       	autoplay:3000,
+		    	loop:true,
+		    });
+		    
+    </script>
+	</body>
+</html>

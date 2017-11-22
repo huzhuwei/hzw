@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		window.onload=function(){
+				
+			var box=document.getElementById("box");
+			var bt=document.getElementById("bt");
+			var bt1=document.getElementById("bt1");
+			var bt3=document.getElementById("bt3");
+			
+//			var nc=document.querySelectorAll("nc");
+			bt.onclick=function(){
+//				box.className+=" b2";
+				addClass(box,"b2");								
+			}
+//			函数方式更改样式
+			function addClass(obj,nc){
+				if(!hasClass(obj,nc))
+				obj.className+=" "+nc;
+				
+			}
+		
+//			防止多次添加同一样式
+			function hasClass(obj,nc){
+				var reg=RegExp("\\b"+nc+"\\b");
+//				使用regexp 需要用\转义
+//				\b只能匹配单词边界的数字、汉字、下划线 nc为独立的字符串
+				console.log(reg);
+				 return reg.test(obj.className);
+//				 如果className中  含有nc 则返回true
+			}
+			
+//			删除Class函数
+			function delClass(obj,nc){
+				var reg=RegExp("\\b"+nc+"\\b");
+				obj.className = obj.className.replace(reg,"");
+			}
+			bt1.onclick=function(){
+				delClass(box,"b2");
+			}
+			
+//			toggleClass 切换一个类  
+			function toggleClass(obj,nc){
+				if(hasClass(obj,nc)){
+					delClass(obj,nc);
+				}else{
+					addClass(obj,nc);
+				}
+			}	
+			
+			bt3.onclick=function(){
+				toggleClass(box,"b2");
+			}
+			
+		}	
+			
+		</script>
+		
+		<style type="text/css">
+			.b1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}	
+			.b2{
+				width:100px;
+				height: 100px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="bt">改变盒子样式</button>
+		<button id="bt1">改回原样</button>
+		<button id="bt3">切换</button>
+		<div id="box" class="b1">
+			
+		</div>
+	</body>
+</html>

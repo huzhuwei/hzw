@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var str="Hello Atguigu";
+//			字符串以字符数组的形式保存
+			console.log(str[0]);
+			var result = str.charAt(4);
+//			根据索引获取选定的字符
+//			var result =str[4];
+			console.log(result);
+			var result = str.charCodeAt(0);
+//			获取字符的Unicode编码
+			console.log(result);
+			var result = String.fromCharCode(20035);
+//			16进制前面需加0x
+//			根据unicode获取字符
+			console.log(result);
+			result = str.concat("你好","再见");
+//			连接字符串
+			console.log(result);
+			str="hello hatguigu";			
+			b = str.indexOf("a");
+//			获取该字符在字符串中第一次的索引,没有则返回-1 
+//			可以指定第二个参数,指定开始查找的位置
+			console.log(b);
+			a = str.lastIndexOf("u");
+//			从后面往前算
+			console.log(a);
+			c=str.slice(0,2);
+//			截取字符串,不影响原字符串  如果省略第二个参数,则截取后面所有,也可以传递负数,-1表示倒数第一个
+			console.log(c);
+			d= str.substring(0,2)  
+//			不能写负数,第二个参数小于第一个参数
+			console.log(d);
+			d= str.substr(1,2) 
+//			从第二个位置截取2个字符
+			console.log(d);
+			str="dawd,dwad,fef,da";
+			e=str.split();
+//			将字符串重新拆分成数组,第一个参数为拆分界限
+//			str.split()如果为空,字符串成为一个元素
+//			str.split("");如果为"",每个字符都为一个元素
+			console.log(e);
+			console.log(Array.isArray(e))
+			console.log(e[0]);
+			console.log(e.length);
+			f=str.toUpperCase();
+//			将字符串转换成大写,不影响原数组
+			console.log(f);
+			g=f.toLowerCase();
+//			将字符串转换成小写,不影响原数组			
+			console.log(g);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

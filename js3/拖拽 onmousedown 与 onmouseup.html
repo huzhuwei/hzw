@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx1{
+				width: 100px;
+				height: 100px;
+				background-color: #BBFFAA;
+				position: absolute;				
+			}
+			
+			#bx2{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				top: 100px;
+				
+			}
+			#pg{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				
+			}
+		</style>
+		
+		<script type="text/javascript">
+		window.onload=function(){
+
+		var bx1=document.getElementById("bx1");
+		var bx2=document.getElementById("bx2");	
+//		创建拖拽函数	
+		function drag(obj){
+
+			obj.onmousedown=function(event){
+				
+//				obj.setCapture();
+//				仅支持IE
+//				设置obj捕获所有鼠标按下的事件
+//				obj.releaseCapture();
+//				设置取消捕获事件
+				event=window.event||event;
+				var ol=event.clientX-obj.offsetLeft;
+				var ot=event.clientY-obj.offsetTop;
+				obj.style.opacity=0.3;
+				
+//				鼠标点击事件时,获取  光标距body距离,对象距body距离 然后相减
+//				得到光标内部距边框距离
+				
+				document.onmousemove=function(event){
+					event=window.event||event;
+					var a=event.clientX-ol;
+					var b=event.clientY-ot;
+					
+					 obj.style.left=a+"px";
+					 obj.style.top=b+"px";
+				}
+				
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;	
+					obj.style.opacity=1;
+					
+				}
+			return false;
+//			取消浏览器默认行为
+			}
+		}
+		drag(bx1);
+		drag(bx2);
+		drag(pg);
+		
+		}	
+		</script>
+	</head>
+	<body>
+		<div id="bx1"></div>
+		<div id="bx2"></div>
+		<img src="img/微信图片_20170901085314.jpg" id="pg"/>
+		
+	</body>
+</html>

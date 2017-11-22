@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				border: 1px solid red;
+				/*overflow: hidden;
+				 解决高度塌陷方法一:使用overflow增加滚动条*/
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+				/*overflow: hidden;*/
+				/*clear: left;*/
+				/*清除box1左侧浮动影响 */
+			}
+			/*clear可以清楚其他元素对当前元素的影响
+			clear:
+				none不清除浮动
+				left 清除左侧浮动影响
+				right 清除右侧浮动影响
+				both 清除两侧中影响最大的*/
+			.box3{
+				width: 300px;
+				height:300px;
+				background-color: blue;
+			}
+			/*.box1:after{
+				display: block;
+				content: "hello";
+				/*content: url(.gif);*/
+				/*在块元素里面插入字或图片,可插入空值 
+				ie6不支持after
+				需要添加zoom:1; */
+			
+			.box11{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				float: left;	
+			}
+			.box1:after{
+				display: block;
+				content: "";
+				clear: left;
+			}
+			/*解决高度塌陷方法二:使用after插入元素增加一个同兄弟元素
+			 并清除浮动*/
+			
+			/*.box12{
+				clear: left;	
+			}*/
+			/*解决高度塌陷方法三:增加一个同兄弟元素
+			 并清除浮动*/
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+				<div class="box11"></div>	
+				<div class="box12"></div>
+		</div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					
+					var newh = '<h1>我是新建的标签</h1>'
+					$("#div1").append(newh);
+//					增加h1标签到div内部末尾
+				
+				})
+				$("#btn1").click(function(){
+					
+					$("#div1").append($("#h1"));
+//					把已经定义的标签转移进div尾部
+
+//					$("#h1").appendTo($("#div1"));
+//					倒过来  同上
+
+//					$("#div1").prepend($("#h1"));
+////					把已经定义的标签转移进div头部
+//
+////					同理
+//					$("#h1").prepend($("#div1"));
+					
+				})
+				
+				$("#btn2").click(function(){
+					$("#div1 p").eq(2).after($("#h1"));
+//					把h1标签插入到div内p标签序号为2的后面
+					
+//					$("#div1 p").eq(2).before($("#h1"));
+//					把h1标签插入到div内p标签序号为2的前面
+					
+				})
+				
+				$("#btn3").click(function(){
+					
+					$("#div1 p").eq(2).replaceWith($("#h1"));
+//					把序号为2的p标签替换成h1标签
+				})
+				
+				$("#btn4").click(function(){
+					var obj = $("#h1").clone();
+					$("#div1 p").eq(2).append(obj);
+//					复制h1标签并增加到序号为2的p标签后面
+				})
+			})
+		</script>
+		<style type="text/css">
+			h1{
+				width: 200px;
+				height: 50px;
+
+			}
+			div{
+				border: 1px solid black;
+				
+			}
+		
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="增加新标签" />
+		<input type="button" name="btn" id="btn1" value="转移标签" />
+		<input type="button" name="btn" id="btn2" value="插队" />
+		<input type="button" name="btn" id="btn3" value="替换标签" />
+		<input type="button" name="btn" id="btn4" value="复制标签" />
+		<h1 id="h1">我是h1标签</h1>
+		<div id="div1">
+			<p>0</p>			
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+		</div>
+	</body>
+</html>

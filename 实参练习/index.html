@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+//			function fun(a){
+//				return a%2==0;
+//			}
+//			console.log(fun(4));
+//			
+//			function fun(r){
+//				return 3.14*r*r;
+//			}
+
+//--------------------------------
+//			console.log(fun(10))
+//			
+//			function message(name,age, gender,address){
+//				console.log(name+age+gender+address);
+//			}
+//			message("小明",20,"女","南昌");
+
+//--------------------------------
+			
+//			function message(o){
+//				console.log(o.name+o.age+o.gender+o.address);
+//			}
+//			var o = {
+//				name:"小明",
+//				age:23,
+//				address:"南昌",
+//				gender:"男",
+//			};
+//			message(o);
+//------------------------------
+//			function fun2(){
+//				var obj={name:"沙和尚"};
+//				return obj;
+//			}
+//			var a =fun2();
+//			console.log("a="+a);
+//-----------------------------			
+//			(function(){
+//				alert("立即执行函数");
+//			})();
+//--------------------------------	
+			var b= new Object();
+//			此处必须使用object 不能使用function
+			b.name="孙悟空";
+			b.sayname=function(){
+				console.log(b.name);
+				
+			};
+			
+//			
+			b.sayname();
+			
+			var obj2={
+
+				age:18,
+				sayname:function(){
+				console.log(obj2.name);
+				name:"zhubajie",
+//				调用函数或方法讲究代码的顺序性
+									
+									
+				}
+			}
+			obj2.sayname();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

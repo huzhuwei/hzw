@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+//				var body=document.getElementsByTagName("body")[0];
+//				同下
+				var body=document.body;
+				var html =document.documentElement
+				console.log(html)
+				console.log(body);
+				var all =document.all;
+				console.log(all);
+				for(var i=0;i<all.length;i++){
+					console.log(all[i]);}
+//					获取页面所有元素
+				all =document.getElementsByTagName("*");
+//				同14行
+					console.log(all[1]);
+				var box1=document.getElementsByClassName("box1");
+//				根据class获取一组元素节点  ie8及以下不兼容
+				console.log(box1.length);
+				console.log(box1[1])
+				
+				
+				var box2=document.getElementsByTagName("div")[1];				
+				console.log(box2.innerHTML);
+				
+				
+				var div =document.querySelector(".box1 div");
+				console.log(div.className);
+//				可查元素名  属性名
+//				css选择器查询一个元素节点  查找class为box1 下面的div
+//				兼容ie8
+//				返回第一个元素
+				
+				console.log(div.innerText);
+				console.log(div.innerHTML);
+				
+				var div =document.querySelectorAll("div");
+//				返回一个数组
+				console.log(div.length);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box">11</div>
+		</div>
+		<div class="box">33</div>
+	</body>
+</html>

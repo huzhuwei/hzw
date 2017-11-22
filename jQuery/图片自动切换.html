@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+		
+			$(function(){
+				
+//				直接切换
+//				num=1;
+				var bg=document.getElementById('bgBox');
+//				setInterval(function(){
+//					bg.style.left=-952*num+"px";
+//					该处不能使用  $("#bgBox")
+//					num++;
+//					if(num==5)
+//					num=1;
+//				},2000)
+
+				var num=1;			
+				function imgRun(){
+
+					timer=setInterval(function(){
+
+					a=num*-952+'px';
+					$("li").eq(num).css({'color':'red','opacity':'0.8'})
+					$("li").eq(num).siblings().css({'color':'white','opacity':'0.5'})
+					$("#bgBox").animate({'left':a},1000,function(){
+						if(num==6){
+						bg.style.left=0;
+						num=1;		
+						$("li").eq(0).css({'color':'red','opacity':'0.8'})
+						$("li").eq(0).siblings().css({'color':'white','opacity':'0.5'})
+						}		
+					});					
+					num++;					
+					},3000)
+				}
+				
+				$('li').click(function(){
+					num=$(this).index();
+//					设定延时器			
+					a=num*-952+'px';
+					clearInterval(timer);
+					$("li").eq(num).css({'color':'red','opacity':'0.8'})
+					$("li").eq(num).siblings().css({'color':'white','opacity':'0.5'})	
+					$("#bgBox").stop().animate({'left':a},1000,function(){
+							clearInterval(timer);										
+							imgRun();				
+					})	
+				})
+				imgRun();
+			})
+			
+			
+			
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#box{
+				width:952px;
+				height: 440px;
+				border: 1px solid red;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+				
+			}
+			#bgBox{
+				width:5712px;
+				height: 440px;
+				position: absolute;
+				/*left: 0px;*/
+				/*border: 3px solid black;*/
+				
+			
+
+			}
+			img{
+				float: left;				
+			}
+			#con{
+				position: absolute;
+				/*width: 250px;*/
+				/*height: 50px;*/
+
+				bottom: 0px;
+				right: 0px;
+
+
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;	
+				width: 115px;
+				height: 30px;	
+				text-align: center;	
+				font: 12px/30px  arial;	
+				/*至少要指定字体大小和字体系列*/
+				background-color: black;
+				opacity: 0.5;
+				filter:alpha(opacity=50);
+				color: white;
+				margin-left: 2px;
+			}
+			li:hover{
+				color: red;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="bgBox">
+				<img src="img1/1.jpg"/>
+				<img src="img1/2.jpg"/>
+				<img src="img1/3.jpg"/>
+				<img src="img1/4.jpg"/>
+				<img src="img1/5.jpg"/>
+				<img src="img1/1.jpg"/>
+				
+			</div>
+			
+			<div id="con">
+				<ul>
+					<li style="color:red;opacity:0.8">双面佳人</li>
+					<li>趣味emoji</li>
+					<li>洒脱旅行</li>
+					<li>少女环游</li>
+					<li>幸运许愿星</li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+</html>

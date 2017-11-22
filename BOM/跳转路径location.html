@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				bt.onclick=function(){
+					alert(location);
+//					获取当前页面完整路径
+					location="http://www.baidu.com";
+//					跳转路径,并生成历史路径
+					location="键盘  onkeydown  与  onkeyup.html";
+					location.assign("http://www.baidu.com");
+//					同理location  跳转路径
+					location.reload();
+//					刷新网站
+					location.reload(true);
+//					刷新网站并去除缓存
+					location.replace("http://www.baidu.com");
+//					跳转路径,不生成历史路径
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="bt">获取地址</button>
+	</body>
+</html>

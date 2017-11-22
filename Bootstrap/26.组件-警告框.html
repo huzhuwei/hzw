@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			body{
+				padding: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--警告框没有默认类，只有基类和修饰类。默认的灰色警告框并没有多少意义。所以您要使用一种有意义的警告类。目前提供了成功、消息、警告或危险。-->
+		<div class="alert alert-success" role="alert"><a href="#" class="alert-link">成功</a></div>
+		<!--警告框中的链接-->
+		<div class="alert alert-info" role="alert">消息</div>
+		<div class="alert alert-warning" role="alert">警告</div>
+		<div class="alert alert-danger " role="alert">危险</div>
+		<!--确保在所有设备上的正确行为-->
+		<!--务必给 <button> 元素添加 data-dismiss="alert" 属性。-->
+		<div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+		</div>
+	</body>
+</html>

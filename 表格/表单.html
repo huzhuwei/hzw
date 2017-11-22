@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<form action="target.html" >
+		<!--form标签必须指定一个action属性,指向服务器地址.-->
+		 <label for="um">用户名</label>
+		 <!--for和id 组合可以通过选中字体选中文本框-->
+		<input id="um" name="username" value="填写用户名"/>
+		密码 
+		<input id="um" name="hello"/><br /><br />
+		<input type="submit" value="登录"/>
+		</form>
+		
+		 <form action="target.html">
+		 	 密码<input type="text" name="zh" /><br />
+		             账户<input type="password" name="mm" /><br />
+
+		    
+		    性别<input type="radio" name="sex" value="male"/>男
+		    <input type="radio" name="sex" value="female"checked="checked"/>女<br />
+		    <input type="submit"  value="登录" />
+		    
+		    <!--name一致,单选按钮,必须指定value值 添加checked="checked"默认选中-->
+		 <!--爱好,多选框-->
+		 <input type="checkbox" name="hobby" value="zq"/>足球
+		 <input type="checkbox" name="hobby" value="lq"checked="checked"/>篮球
+		 <input type="checkbox" name="hobby" value="ymq"checked="checked"/>羽毛球
+		 <input type="checkbox" name="hobby" value="ppq"/>乒乓球
+		 <!--下拉列表-->
+		 <!--你喜欢的明星   默认选中的选项 selected="selected"  multiple展开效果 ctrl多选-->
+		 <!--<select name="star" multiple="multiple">-->
+		 <!--使用optgroup创建一个分组 label 组名-->
+		 <select name="star" >
+		 	<optgroup label="女明星">
+		 	<option value="fbb" >范冰冰</option>
+		 	<option value="lxr" selected="selected">林心如</option>
+		 	<option value="zbs">赵本山</option>
+		 	</optgroup>
+		 	<optgroup label="男明星" >
+		 	<option value="zbs">赵本山</option>
+		 	<option value="zbs">赵本山</option>
+		 	<!--<option value="zbs"></option>-->
+		 	<option value="zbs">赵本山</option>
+		 	</optgroup>
+		 </select>
+		 <br />
+		 
+		 <fieldset id="">
+		 	<legend>用户信息</legend>
+		 	<!--legend 组名-->
+			 自我介绍 
+			 <textarea name="info" ></textarea>
+			 <input type="reset" />
+			 <!--重置-->
+			 <input type="button" value="按钮" />
+			 <!--单纯的按钮,无功能-->
+			 <button type="button">按钮</button>
+			 <button type="submit">提交</button>
+			 <!--提交信息使用-->
+			 <button type="reset">重置</button>	
+			 <!--重置信息使用-->
+		 </fieldset>
+		 <!--为表单项进行分组-->
+		 </form>
+	</body>
+</html>
+<form action="" method="post">
+	<input type="radio" name="" value="" />
+	<input type="checkbox" name="" value="" />
+	<input type="checkbox" name="" value="" />
+	<input type="checkbox"  value="" checked="checked"/> 
+	<select name="">
+		<option value=""></option>
+		<option value="" selected="selected"></option>
+		<option value=""></option>
+	</select>
+	<input type="submit" value="提交"/>
+</form>

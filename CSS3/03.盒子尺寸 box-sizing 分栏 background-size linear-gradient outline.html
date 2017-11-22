@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			#hd{
+				width: 70%;
+				height: 180px;
+				background: yellow;
+				margin: 100px auto;
+				min-width: 300px;
+				max-width: 500px;
+				/*宽度最小为300px;*/
+				padding: 10px;
+				border: 3px solid red;
+				box-sizing: border-box;
+				/*使内边距和边框计算在总宽度高度内*/
+			}
+			#d1{
+				column-count: 5;
+				-moz-column-count: 5;
+				-ms-column-count: 5;
+				-webkit-column-count: 5;
+				
+				/*分栏  ie无效*/
+			}
+			#d2{
+				-moz-column-width: 400px;
+				/*设置栏宽*/
+				-webkit-column-width: 400px;
+				-webkit-column-gap: 100px;
+				/*栏间距*/
+				-webkit-column-rule: 2px solid blue;
+				/*分割线*/
+				
+			}
+			#d3{
+				width: 1000px;
+				height: 500px;
+				background: url(img/1.jpg) no-repeat;
+				border: 1px solid red;
+				outline:1px solid red;
+				/*outline不占位置  不影响其他元素位置*/
+				background-size: 1000px 500px;
+				/*设置改变背景图的大小*/
+				background-size: 100px;
+				/*宽度100px  高度自适应*/				
+				background-size: 100% 100%;
+				/*撑满父元素*/
+				/*background-size: cover;*/
+				/*宽度变为100%  高度等比例*/
+				/*contain 高度变为100%  宽度等比例*/
+			}
+		</style>
+	</head>
+	<body>
+	<div id="hd">国际竹藤组织成立20周年志庆暨竹藤绿色发展与南南合作部长级高峰论坛在北京举行。国家主席习近平向国际竹藤组织致贺信。
+
+习近平指出，国际竹藤组织成立20年来，为加快全球竹藤资源开发、促进竹藤产区脱贫减困、繁荣竹藤产品贸易、推动可持续发展发挥了积极作用。
+
+习近平强调，中国共产党第十九次全国代表大会提出，中国坚持人与自然</div>
+	<div id="d1">际竹藤组织成立20周年志庆暨竹藤绿色发展与南南合作部长级高峰论坛在北京举行。国家主席习近平向国际竹藤组织致贺信。
+
+习近平指出，国际竹藤组织成立20年来，为加快全球竹藤资源开发、促进竹藤产区脱贫减困、繁荣竹藤产品贸易、推动可持续发展发挥了积极作用。
+
+习近平强调，中国共产党第十九次全国代表大会提出，中国坚持人与</div>
+	<div id="d2">际竹藤组织成立20周年志庆暨竹藤绿色发展与南南合作部长级高峰论坛在北京举行。国家主席习近平向国际竹藤组织致贺信。
+
+习近平指出，国际竹藤组织成立20年来，为加快全球竹藤资源开发、促进竹藤产区脱贫减困、繁荣竹藤产品贸易、推动可持续发展发挥了积极作用。
+
+习近平强调，中国共产党第十九次全国代表大会提出，中国坚持人与</div>
+	</body>
+	<div id="d3">
+		
+	</div>
+</html>

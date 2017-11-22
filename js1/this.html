@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(a,b){
+				console.log("a="+a+","+"b="+b);
+				console.log(this.name);
+//				this指向一个函数的执行的上级(对象或window全局)
+			}
+//			fun(123,456);
+			
+			var obj={
+				name:"孙悟空",
+				sayName:fun			
+			}
+			
+			var obj2={
+				name:"我是对象的name属性",
+				sayName:fun				
+			}
+			var name="我是全局的name属性"
+			console.log(obj.sayName==fun);
+			obj2.sayName()
+		
+//			以方法调用  this 是object
+			fun();
+//			以函数调用 this 是window
+			var name="全局"
+			function fun3(){
+				
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

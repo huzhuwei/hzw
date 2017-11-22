@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box1{
+				border:  red solid 10px;
+				/*display: inline-block;
+				float: left;*/
+				overflow: auto;
+				zoom:1;
+			}
+			/*BFC  block formatting context
+			开启BFC该属性可以设置打开或者关闭,默认是关闭的
+			开启属性
+			1.父元素的垂直外边距不会和子元素重叠
+			2.BFC元素不会被浮动元素所覆盖
+			3.开启BFC的元素可以包含浮动的子元素
+			如何开启BFC
+			1.设置元素浮动
+			2.设置元素绝对定位
+			3.设置元素为inline-block
+			4.将overflow（滚动条）设置为非visible的值  如auto hidden*/
+			/*ie6不支持  有另一个属性  haslayout*/
+			/*zoom在ie中支持 ，表示放大,写几就将元素放大几倍 可以开启 haslayout*/
+			
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: blue;	
+				float: left;	
+				子元素浮动,父元素塌陷		
+				margin:0;
+			}
+			
+			.box3{
+				height: 100px;
+				background-color: yellow;
+				/*float: left;*/
+			}
+			在文档流中,父元素的高度默认是被子元素撑开的,也就是
+			子元素多高,父元素多高
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+		<div class="box3">
+			
+		</div>
+	</body>
+</html>

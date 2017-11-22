@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>导航栏</title>
+	<style type="text/css">
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+	    /*记住,必须清楚所有默认内外边距*/
+		ul{
+			width: 1000px;
+			margin: 50px auto;
+			background-color: yellowgreen;
+			overflow: hidden;
+			/*滚动条防止因子元素float高度塌陷*/
+			/*padding:0;*/
+			
+		}
+		li{
+			list-style: none;
+			/*去除序列的符号*/
+			float: left;
+			/*浮动li使在同一行*/
+			width: 25%;
+			
+		}
+		a{
+			display: block;
+			/*使a元素转化成块元素*/
+			padding: 5px 0;
+			/*内边距高度增加5px*/
+			color: white;
+			text-align: center;
+			/*本文居中*/
+			text-decoration: none;
+			/*去掉下划线*/
+			width: 100%;
+		}
+		a:hover{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">首页</a></li>
+		<li><a href="#">新闻</a></li>
+		<li><a href="#">联系</a></li>
+		<li><a href="#">关于</a></li>
+	</ul>
+</body>
+</html>

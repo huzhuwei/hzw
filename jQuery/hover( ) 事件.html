@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div#box{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+			}
+			div#box1{
+				margin-top: 10px;
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				$("#box").mouseenter(function(){
+					alert('我进去了');
+				})
+				$("#box").mouseleave(function(){
+					alert('我出来了');
+				})
+				
+				$("#box1").hover(function(){
+					alert('我进去了');
+				},function(){
+					alert('我出来了');
+				})
+//				式子 hover(function(){},function(){});
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		上下同理
+		<div id="box1">
+			
+		</div>
+	</body>
+</html>

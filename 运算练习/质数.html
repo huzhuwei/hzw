@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			var a =prompt("请输入一个大于1的数");
+//		
+//			for(i=2;i<a;i++){
+//				if(a%i==0){
+//					alert(a+"不是质数");break;
+//				}else if(a==(i+1)){
+//					alert(a+"是质数");
+//					
+//				}
+//			}
+
+//		或者
+console.time("test");
+//			var a =prompt("请输入一个大于1的数");
+			var a=1000;
+			var flag=true;
+			for(i=2;i<a;i++){
+				if(a%i==0){
+					
+					flag=false;
+				}
+					
+					
+				}
+			if(flag){
+				console.log(a+"是质数");
+			}else{
+				console.log(a+"不是质数");
+			}
+			
+console.timeEnd("test");
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

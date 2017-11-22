@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			body{
+				padding: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul class="nav nav-tabs ">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <!--class="active"  选中状态-->
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages</a></li>
+		</ul>
+		<!--通过添加 .navbar-inverse 类可以改变导航条的外观。-->
+		<hr />
+		
+		<!--竖直排列-->		
+		<ul class="nav nav-tabs nav-stacked">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <!--class="active"  选中状态-->
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages</a></li>
+		</ul>
+		<hr />
+		
+		<!--胶囊式标签页-->
+		<ul class="nav nav-pills">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages</a></li>
+		  
+		</ul>
+		<hr />
+		<ul class="nav nav-tabs nav-justified">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation"><a href="#">Profile</a></li>
+		  <li role="presentation"><a href="#">Messages</a></li>
+		  
+		</ul>
+		<ul class="nav nav-pills nav-justified">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation" class="disabled"><a href="#">Profile</a></li>
+		  <!--class="disabled"  不可选中-->
+		  <li role="presentation"><a href="#">Messages</a></li>
+		  
+		</ul>
+		<br />
+		<!--下拉式菜单-->
+		<ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+	  
+	  	<li role="presentation" class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		      Dropdown <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu">
+		  	<li role="presentation" class="active"><a href="#">Home</a></li>
+		    
+		    </ul>
+		</li>
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		 
+		</ul>
+		
+		
+	</body>
+</html>

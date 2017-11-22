@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*body{
+			background-color: blue;
+			/*_background-color: yellow;*/
+			/*在样式前加一个下划线,只有ie6及以下才能识别*/
+			/**background-color: yellow;*/
+			/*在样式前加一个*,只有ie7及以下才能识别*/
+			/*background-color: yellow\0;*/			
+			/*在值后面加\0,只有ie8及以下才能识别*/
+			}
+			/*也可在选择器前面加*/
+		</style>
+	</head>
+	<body>
+		<!--特殊情况下在某些浏览器中执行,css hack 处理这种问题 ie10以下不支持
+		-->
+		<!--[if IE ]>
+		<p>为了您和家人的健康,请远离ie6</p>
+			只对ie有效,
+		<![endif]-->
+		<!--if IE 6 后面可以跟版本-->
+			<!--if lt IE 9    小于ie9  gt大于  lte小于等于 ! ie 6 除了ie6-->
+		
+	</body>
+</html>

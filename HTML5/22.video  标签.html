@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var video = document.getElementById('video');
+				var btn = document.getElementById('btn');
+				var btn1 = document.getElementById('btn1');
+				var btn2 = document.getElementById('btn2');
+				var rg = document.getElementById('rg');
+		
+				btn.onclick = function(){
+//					开始播放
+					video.play();
+				}
+				btn1.onclick = function(){
+//					暂停播放
+					video.pause();
+				}
+				btn2.onclick = function(){
+//					暂停播放
+					var nowTime = video.currentTime;
+					var newTime = nowTime+3;
+					video.currentTime = newTime;
+				}
+//				视频播放事件
+				video.onplay = function(){
+					alert('开始播放了');
+				}
+				rg.onchange = function(){
+					video.volume=this.value/10;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="开始播放" />
+		<input type="button" name="btn1" id="btn1" value="暂停播放" />
+		<input type="button" name="btn2" id="btn2" value="快进" />
+		<video src="mp4/希特勒的演讲-纪录片视频-搜狐视频.mp4" id="video" loop="loop" width="600" poster="img/1.jpg"></video>
+		<input type="range" name="" id="rg" value="10" min="0" max="10" step="1" />
+	</body>
+</html>

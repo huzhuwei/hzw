@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0px;
+				/*需要设置left属性,否则部分浏览器读取auto*/
+			}
+			#bx3{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				top: 200px;
+				left: 0px;
+				/*需要设置left属性,否则部分浏览器读取auto*/
+			}
+			#bx2{
+				width: 1px;
+				height: 1000px;
+				background-color: #000000;
+				position: absolute;
+				left: 799px;
+				top: 0;
+				/*border-left: 1px solid black;*/
+			}
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+		
+			window.onload=function(){
+				
+				btn1=document.getElementById("btn1");
+				btn2=document.getElementById("btn2");
+				btn4=document.getElementById("btn4");
+				bx1=document.getElementById("bx1");
+//				按钮点击触发move函数
+				btn1.onclick=function(){
+					move(bx1,800,10);
+				};
+				btn2.onclick=function(){
+					move(bx1,0,10);
+				};
+				btn3.onclick=function(){
+					move(bx3,800,10);
+				};
+				btn4.onclick=function(){
+					move(bx3,800,10,"width",function(){
+						move(bx3,800,10,"height",function(){
+							move(bx3,0,10,"top",function(){
+								move(bx3,0,10,"width",function(){					
+								})
+							})
+						})
+					})
+				}
+			}		
+//							  对象   目标      速度    属性  函数
+				function move(obj,target,speed,attr,func){	
+					
+					clearInterval(obj.timer);
+//					getStyle()获取的值有单位px 用parseInt转换为数值
+					var current=parseInt(getStyle(obj,attr));
+					if(current>target){
+						speed=-speed;
+					}
+					
+					obj.timer=setInterval(function(){
+						var b=parseInt(getStyle(obj,attr));
+//						获取盒子的left距离,因含有单位则需转换成整数
+//						上条件需放入定时器,b的值才能持续更新
+						
+						var a=b+speed;
+						if((speed<0&&a<target)||(speed>0&&a>target)){
+							a=target;
+						}
+						
+						obj.style[attr]=a+"px";
+//						属性为变量需要用中括号括起来
+						
+						if(a==target){
+							clearInterval(obj.timer);	
+//							停止调用函数
+							func&&func();
+//							执行调用函数
+						}						
+					},50)													
+				}
+			
+				
+				function getStyle(obj,name){
+					if(window.getComputedStyle){	
+//						普通浏览器方式,不支持IE8及以下 
+//						使用对象的属性判断,不会报错
+//						用形参判断,会报错
+						return getComputedStyle(obj,null)[name];
+					}else{
+//						IE方式
+						return obj.currentStyle[name];	
+						
+					}
+				}
+		</script>
+		
+	
+	</head>
+	<body>
+		<button id="btn2">bx1点击向左移动</button>
+		<button id="btn1">bx1点击向右移动</button>
+		<button id="btn3">bx3点击向右移动</button>
+		<button id="btn4">测试</button>
+		<br />
+		<br />
+		<div id="bx1"></div>
+		<div id="bx2"></div>
+		<div id="bx3"></div>
+	</body>
+</html>

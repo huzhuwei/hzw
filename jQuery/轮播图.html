@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+			a=0;				
+//			自动轮播函数
+			function run(){
+				a%=$("a").length;
+//				a=(a==5)?0:a;
+				$('img').eq(a).fadeIn(500);
+				$('img').eq(a).siblings().fadeOut(500);
+				$('a').eq(a).css({'background':'black'});
+				$('a').eq(a).siblings().css({'background':'red'});
+				a++;			
+			}
+				timer=setInterval(run,2000);
+				
+	//			鼠标移入效果
+				$('a').mouseenter(function(){
+					clearInterval(timer);
+					obj=$(this);
+//					如果$(this)写在定时器里,那么$(this)指向的就是定时器
+					tt=setTimeout(function(){						
+//					获取移入的a的序号
+					a=obj.index();
+//					a=c;	
+					run();
+					},300);
+										
+				})
+				
+	//			鼠标移出效果
+				$('a').mouseleave(function(){
+//					清理延时器  防止多次移入产生多次延时器
+					clearInterval(tt);					
+			
+					timer=setInterval(run,2000);
+								
+				})
+			
+			})
+		</script>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border:2px solid black;
+			
+			}
+			img{
+				width: 200px;
+				height: 200px;
+				float: left;
+			}
+			a{
+				width: 15px;
+				height: 15px;
+		
+				margin-left: 5px;
+				float: left;
+				/*元素左浮动并成为块元素*/
+				background: red;
+				z-index: 10;
+				opacity: 0.6;
+				filter: alpha(opacity=60);
+			}
+			#point{
+				position: absolute;
+				bottom: 10px;
+				left: 50px;
+			
+			}
+			#max{
+				position: relative;		
+				margin: 0 auto;	
+				width: 200px;
+					
+			}
+		</style>
+	</head>
+	<body>
+		<div id="max">
+			
+		<div id="box">
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+			<img src="img/5.jpg"/>
+			
+		</div>		
+		<div id="point">
+				<a style="background:black" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+		</div>
+		
+		</div>
+	</body>
+</html>

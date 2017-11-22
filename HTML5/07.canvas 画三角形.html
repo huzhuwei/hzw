@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background-color: burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="300" width="300"></canvas>
+		
+		<script type="text/javascript">
+			var canvas=document.getElementById('canvas');
+			var cv=canvas.getContext('2d');
+			
+			cv.beginPath();
+//			开启线条路径
+
+			cv.moveTo(100,100);
+//			设置起点
+			cv.lineTo(100,200);
+//			设置终点
+			cv.strokeStyle='green';
+//			设置线条颜色
+			cv.lineWidth='5';
+//			设置线条宽度
+
+
+			cv.stroke();
+//			把线条画出来
+			
+			cv.lineTo(150,150);
+//			设置第二个终点
+			cv.stroke();
+//			把线条画出来
+
+			cv.closePath();
+//			关闭路径 将形状闭合
+			cv.stroke();
+//			把线条画出来
+
+			cv.fillStyle='green';
+//			设置填充颜色
+			cv.fill();
+//			
+		</script>
+	</body>
+</html>

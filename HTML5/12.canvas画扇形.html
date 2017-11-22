@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext('2d');
+		
+//			cv.beginPath();
+
+			cv.moveTo(100,100);
+//			设置起点
+			cv.arc(100,100,150,0*Math.PI/180,60*Math.PI/180);
+//			获取圆弧两点
+			cv.fillStyle='yellow';
+//			填充  
+			cv.fill();
+			
+			cv.beginPath();
+//			新建路径  防止覆盖前面的颜色
+			cv.moveTo(100,100);
+//			设置起点
+			cv.arc(100,100,150,60*Math.PI/180,260*Math.PI/180);
+//			获取圆弧两点
+			cv.fillStyle='blue';
+//			填充  
+			cv.fill();
+			
+			cv.beginPath();
+//			新建路径
+			cv.moveTo(100,100);
+//			设置起点
+			cv.arc(100,100,150,260*Math.PI/180,360*Math.PI/180);
+//			获取圆弧两点
+			cv.fillStyle='red';
+//			填充  
+			cv.fill();
+		</script>
+	</body>
+</html>

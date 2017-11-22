@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			var img=document.getElementsByTagName("img");
+			var btn1=document.getElementById("btn1");
+			var btn2=document.getElementById("btn2");
+			var timer,index=0;
+			var arr=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg']
+//			定义timer为全局 使两个点击函数都能获取
+			btn1.onclick=function(){
+				clearInterval(timer);
+//				每次点击清除一次定时器,防止因多次触发点击事件而生成多个定时器事件
+				timer=setInterval(function(){
+
+					
+					img[0].src=arr[index];				
+					index++;
+					index%=arr.length;
+//					取余数使index归0
+				},100)
+			}
+			
+			btn2.onclick=function(){
+				clearInterval(timer);
+//				不管timer是什么数据类型,clearInterval都不会报错
+			}
+		}
+	</script>
+	
+	<style type="text/css">
+		
+		img{
+			width: 100px;
+			height: 100px;
+			display: block;
+		}
+		
+	</style>
+	<body>
+		
+		<img src='img/1.jpg'/>
+		<br />
+		
+
+	
+		<button id="btn1">开始</button>
+		<button id="btn2">停止</button>
+		
+			
+		
+	
+		
+	</body>
+</html>

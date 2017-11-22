@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$("#btn1").click(function(){
+					$("td :checkbox").prop('checked',true);					
+				})
+				
+				$("#btn2").click(function(){
+					$("td :checkbox").attr('checked',false);					
+				})
+				
+				$("#btn3").click(function(){
+//					var objs=$("td :checked");
+////					保存已经被选中的节点
+//					$("td :checkbox").prop('checked',true);					
+//					objs.removeProp('checked');
+					
+					$("td :checkbox").prop('checked',function(i,val){
+//						获取checked的值  返回相反的值  替换原值    i为序号
+						return !val;
+					});
+				})
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="btn1" value="全选" />
+		<input type="button" name="" id="btn2" value="全不选" />
+		<input type="button" name="" id="btn3" value="反选" />
+		
+		<table cellspacing="" cellpadding="" id="list">
+			
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>后盾人  人人做后盾</td>				
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>后盾人  人人做后盾</td>				
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>后盾人  人人做后盾</td>				
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>后盾人  人人做后盾</td>				
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" id="" value="" /></td>
+				<td>后盾人  人人做后盾</td>				
+			</tr>
+		</table>
+	</body>
+</html>

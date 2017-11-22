@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+		window.onload=function(){
+			var bx1=document.getElementById("bx1");
+//			鼠标滚动事件  onmousewheel不支持火狐
+			bx1.onmousewheel=function(event){
+			event=event||window.event;
+			console.log(event.wheelDelta);
+				if(event.wheelDelta>0&&bx1.clientHeight>20){
+				bx1.style.height=bx1.clientHeight-10+"px";	
+				}else{
+				bx1.style.height=bx1.clientHeight+10+"px";					
+				}
+				return false;
+//				取消浏览器同时滚动行为
+			}
+			
+//			该方法只支持火狐
+			bx1.addEventListener("DOMMouseScroll",function(){
+				if(event.detail)
+//				与event.wheelDelta值相反
+				bx1.style.height=bx1.clientHeight+10+"px";			
+			},false)
+				event.preventDefault&&event.preventDefault();
+//				判断IE8不可用
+//				同理return false;
+		}
+		</script>
+		
+		<style type="text/css">
+			#bx1{
+				width: 100px;
+				height: 100px;
+				background-color: #bfa;
+			}
+			#bx2{
+				height: 1000px;
+			}
+		</style>
+	</head>
+	<body id="bx2">
+		<div id="bx1"></div>
+	</body>
+</html>

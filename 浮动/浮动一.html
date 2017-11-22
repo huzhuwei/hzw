@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width:200px;
+				height:200px;
+				background-color: red;
+				/*display: inline-block;*/
+				float: left;
+				opacity: 0.5;
+				
+			
+				/*float设置元素浮动后 元素脱离文档流  往左上或右上，直到碰到父元素的边框
+				 * 如果浮动元素上边是一个没有浮动的块元素，则浮动元素不会超过块元素
+				 * 浮动的元素不会超过他的兄弟浮动元素，最多一边齐
+				 *  元素会覆盖文档流
+				none  默认无效果
+				right  往右边浮动
+				left  往左侧浮动*/
+				
+			}
+			.box2{
+				width:200px;
+				height:200px;
+				background-color: yellow;
+				float: left;
+				
+				/*float: left;*/
+			}
+			.box3{
+				width:200px;
+				height:200px;
+				background-color: blue;
+					
+			}
+			.s1{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		<div class="box2">111</div>
+		<div class="box3"></div>
+	
+	</body>
+</html>

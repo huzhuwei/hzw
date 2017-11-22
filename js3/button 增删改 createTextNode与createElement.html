@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+//			onload事件会在整个页面加载完成之后才触发	
+			
+			function myClick(idStr,fun){
+				var idStr = document.getElementById(idStr);
+				idStr.onclick=fun;
+
+				
+			}
+			
+			myClick("str",function(){
+				alert("hello");
+				var button1=document.createElement("button");
+//				新增一个button 节点		
+				button1.innerHTML="北京";
+//				button1.parentNode.appendChild(button1);
+//				var bttxt = document.createTextNode("北京");		
+////				新增一个文本节点
+//				alert(button1);
+//				button1.appendChild(bttxt);
+////				把文本节点加入到button节点,文本节点不能同时作用于两个元素
+//				alert(button1.innerText);
+////				输出button下的本文节点
+				var body=document.getElementsByTagName("body");
+				body[0].appendChild(button1);
+				
+//				增加一个前面子节点
+				var bt1=document.createElement("button");
+				var bttxt1 = document.createTextNode("天津");		
+				bt1.appendChild(bttxt1);
+				var idStr1= document.getElementById("str");
+				
+				body[0].insertBefore(bt1,idStr1)
+				console.log(idStr1);
+//				insertBefore():
+//				可以在指定的子节点前插入新的子节点
+//				语法:父节点.insertBefore(新节点,旧节点)
+				
+				
+			});
+//			replaceChild替换节点
+			myClick("nj",function(){
+				var nj=document.getElementById("nj");
+//				var tt2=document.createTextNode("南京");
+				
+				var dj=document.getElementById("dj");
+				
+				var body=document.getElementsByTagName("body");
+				body[0].replaceChild(dj,nj);
+//						前面的替换后面的
+			body[0].removeChild(dj)
+//			同下
+//			dj.parentNode.removeChild(dj);
+//			body[0].removeChild(body[0].childNodes[0]) 获取子节点
+//			获取父节点
+			alert(body[0].innerHTML);
+			
+			body[0].innerHTML+="<button id=str1>按钮</button>";
+//			使用innerHTML也能实现DOM增删改  影响全部
+			});		
+			
+			
+			
+			
+
+
+		};
+		</script>
+	</head>
+	<body>
+		<button id="str">按钮</button>
+		<button id="nj">南京</button>
+		<button id="dj">东京</button>
+		<!--<input type="button" id="str"  value="按钮" />-->
+	</body>
+</html>

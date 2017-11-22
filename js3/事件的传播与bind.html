@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx1{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+			#bx2{
+				width: 150px;
+				height: 150px;
+				background-color: blue;
+			}
+			#bx3{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+			}
+		</style>
+		<script type="text/javascript">
+		window.onload=function(){
+			var bx1=document.getElementById("bx1");
+			var bx2=document.getElementById("bx2");
+			var bx3=document.getElementById("bx3");
+			
+			function bind(obj,event,func){
+				if(obj.addEventListener){
+					obj.addEventListener(event,func,true);
+
+				}else{
+					obj.attachEvent("on"+event,func);
+					func.call(obj);
+//					设置func的this为obj
+				}
+			}
+//			addEventListener的参数设置为false,由里向往传播    点击最小格  显示321
+//			参数设置为true,由外向里传播   点击最小格  显示123  捕获阶段
+			bind(bx1,"click",function(){
+				alert(1);
+			})
+			bind(bx2,"click",function(){
+				alert(2);
+			})
+			bind(bx3,"click",function(){
+				alert(3);
+			})
+		}
+		</script>
+	</head>
+	<body>
+		<div id="bx1">
+			<div id="bx2">
+				<div id="bx3"></div>
+			</div>
+		</div>
+	</body>
+</html>

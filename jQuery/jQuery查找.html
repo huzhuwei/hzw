@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#box').children('p').css({'color':'red','font-size':'25px'})
+//				同理$('#box>p')  选择子辈p标签
+
+				$('#box').find('p').css({'color':'red','font-size':'25px'})
+//				所有后代p都能选中  同理$('#box p')
+
+				$('.one').next('p').css({'color':'red','font-size':'25px'})
+//				class为one后面的p标签,  同理.one+p;
+
+				$('.one').nextAll('p').css({'color':'red','font-size':'25px'})
+//				class为one后面的所有的p标签
+
+				$('.one').parent().css({'color':'red','font-size':'25px'})
+//				class为one的父级标签
+
+				$('.one').siblings().css({'color':'red','font-size':'25px'})
+//				class为one的所有兄弟元素
+
+				$('.one').siblings('p').css({'color':'red','font-size':'25px'})
+//				class为one的所有p的兄弟元素
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>我是后盾0</p>
+			<p class="one">我是后盾1</p>
+			<p id="two">我是后盾2</p>
+			<p>我是后盾3</p>
+			<p><span>我是后盾4</span></p>
+			<p>我是后盾5</p>
+			<p class="no">我是后盾6</p>
+			<div>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bx1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0px;
+				/*需要设置left属性,否则部分浏览器读取auto*/
+			}
+			#bx2{
+				width: 0px;
+				height: 1000px;
+				background-color: #000000;
+				position: absolute;
+				left: 800px;
+				top: 0;
+				border-left: 1px solid black;
+			}
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+		
+			window.onload=function(){
+				
+				btn1=document.getElementById("btn1");
+				btn2=document.getElementById("btn2");
+				bx1=document.getElementById("bx1");
+//				按钮点击触发move函数
+				btn1.onclick=function(){
+					move(bx1,800,10);
+				};
+				btn2.onclick=function(){
+					move(bx1,0,10);
+				};
+				
+//				console.log(parseInt(1.8));
+//				parseInt()取整  去除小数
+			}	
+				var timer;
+				function move(obj,target,speed){	
+					
+					clearInterval(timer);
+//					getStyle()获取的值有单位px 用parseInt转换为数值
+					var current=parseInt(getStyle(obj,"left"));
+					if(current>target){
+						speed=-speed;
+					}
+					
+					timer=setInterval(function(){
+						var b=parseInt(getStyle(obj,"left"));
+//						获取盒子的left距离,因含有单位则需转换成整数
+//						上条件需放入定时器,b的值才能持续更新
+						
+						var a=b+speed;
+						if((speed<0&&a<target)||(speed>0&&a>target)){
+							a=target;
+						}
+						
+						obj.style.left=a+"px";
+						
+						if(a==target){
+							clearInterval(timer);	
+//							停止调用函数
+						}						
+					},50)													
+				}
+			
+				
+				function getStyle(obj,name){
+					if(window.getComputedStyle){	
+//						普通浏览器方式,不支持IE8及以下 
+//						使用对象的属性判断,不会报错
+//						用形参判断,会报错
+						return getComputedStyle(obj,null)[name];
+//						name是变量 需要用[]
+					}else{
+//						IE方式
+						return obj.currentStyle[name];	
+					}
+				}
+		</script>
+		
+	
+	</head>
+	<body>
+		<button id="btn2">点击向左移动</button>
+		<button id="btn1">点击向右移动</button>
+		
+		<div id="bx1"></div>
+		<div id="bx2"></div>
+	</body>
+</html>

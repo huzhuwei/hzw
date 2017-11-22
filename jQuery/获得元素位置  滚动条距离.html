@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$("p").scroll(function(){
+//					获得滚动条的距离
+					var a = $("p").scrollTop();
+					$("h1").html(a);
+					
+				})
+				
+				setTimeout(function(){
+//					设置滚动条距离500
+					$("p").scrollTop(500)
+				},3000)
+				
+				$('#btn').click(function(){
+					var w=$("p").css('width');
+//					获得元素的属性  带单位
+					alert(w);
+				})
+				
+				$('#btn1').click(function(){
+					var y=$("p").offset().left;
+//					获得元素相对于页面的整个距离  不带单位
+					var m=$("p").offset().top;
+					alert(y);
+					alert(m);
+					var k=$("p").position().left;
+					alert(k);
+					
+					
+				})
+			})
+			
+		</script>
+		<style type="text/css">
+			p{
+				width: 200px;
+				height: 300px;
+				overflow: auto;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="获取属性" />
+		<input type="button" name="" id="btn1" value="获取页面距离" />
+		<h1>0</h1>
+		<p>10月23日，中船重工官方微信公众号发布题为《我国首台艇用永磁推进电机动车成功，具有完全自主知识产权》的消息称，10月18日上午，由中船重工七一二所首套实艇安装的永磁推进电机动车成功，各项性能指标均满足技术要求。
+　　为满足时间节点要求，七一二所于9月29日赶赴三亚，开始了连续20天夜以继日的调试工作。
+　　相继完成设备单机恢复、设备通电检查、设备间通讯等工作后，10月8日，整个分系统功能基本恢复。
+　　10月16日晚，完成静态报检，永磁推进电机具备了动车条件。
+　　10月18日上午11点，螺旋桨缓缓运转，逐渐达到规定转速，永磁推进电机动车成功。
+　　至此，我国首台拥有完全自主知识产权的艇用永磁推进电机动车成功，为后期试验的顺利进行奠定了基础。
+
+　　世界上第一台实用舰用永磁电机是德国西门子公司1986年研制的，此后西方国家新型舰船，尤其是潜艇，纷纷开始运用永磁电机。现代舰艇用永磁电机使用稀土材料制造的高性能永磁材料取代了传统直流电机的励磁原理，具有功率密度大、噪音小等特点。中国在上世纪90年代开始推进这方面的研制工作。
+　　值得注意的是，中国的艇用永磁电机试验是在三亚进行，三亚是中国常规潜艇和核潜艇部队的主要基地。如果在中国的各型潜艇上采用永磁电机，将直接把中国永磁电机技术带入世界第一集团。</p>
+	</body>
+</html>

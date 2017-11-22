@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#box").on('click mouseover',function(){
+//					移入事件与点击事件共同触发一个函数
+					alert('事件触发了');				
+					
+				})
+				
+				$("#btn").click(function(){
+//					去掉移入事件
+					$("#box").off('mouseover');
+					
+				})
+				
+				
+				
+				$("#btn1").click(function(){
+//					
+					$("body").append('<h1>我是新增的</h1>');
+						
+						
+					
+				})
+				$("body").on('click','h1',function(){
+//					该方法使新增的标签同样具有触发事件效果
+						alert('事件触发了');
+				})
+				
+				$("h2").one('click',function(){
+//					该方法使新增的标签同样具有触发事件效果
+						alert('点我触发一次');
+				})
+			})
+		</script>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: bisque;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="去掉移入事件" />
+		<input type="button" name="" id="btn1" value="新增h1标签" />
+		<div id="box">
+			
+		</div>
+		<h2>我只触发一次</h2>
+		<h1>1</h1>
+		<h1>1</h1>
+		<h1>1</h1>
+	
+	</body>
+</html>

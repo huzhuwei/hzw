@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			body{
+				padding: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--下拉菜单-->
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    Dropdown
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		  	<!--标题-->
+		  	<li class="dropdown-header">菜单1</li>
+		  	
+		    <li><a href="#">Action</a></li>
+		    <li><a href="#">Another action</a></li>
+		    <li class="disabled"><a href="#" >Something else here</a></li>
+		    <!--class="disabled" 禁用-->
+		    
+		  	<li class="dropdown-header">菜单2</li>
+		    
+		    <li role="separator" class="divider"></li>
+		    <!--分割线-->
+		    <li><a href="#">退出</a></li>
+		  </ul>
+		</div>
+		
+		<hr />
+		<!--上拉菜单-->
+		<div class="dropup">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Dropup
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
+
+		    <li><a href="#">Action</a></li>
+		    <li><a href="#">Another action</a></li>
+		    <li><a href="#">Something else here</a></li>
+		    <li role="separator" class="divider"></li>
+		    <li><a href="#">Separated link</a></li>
+		  </ul>
+		</div>
+	</body>
+</html>

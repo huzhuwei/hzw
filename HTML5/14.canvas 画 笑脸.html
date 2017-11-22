@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: blanchedalmond;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var cv = canvas.getContext('2d');
+			cv.beginPath();
+			cv.fillStyle='yellow';
+			cv.arc(100,100,50,0*Math.PI/180,360*Math.PI/180);
+			cv.fill();
+			cv.closePath();
+			
+			cv.beginPath();
+			cv.arc(400,100,50,0*Math.PI/180,360*Math.PI/180);
+			cv.fill();
+			cv.closePath();
+			
+			cv.beginPath();
+			cv.fillStyle='yellowgreen';
+			
+			cv.moveTo(250,200);
+			cv.lineTo(230,240);
+			cv.lineTo(270,240);
+			cv.closePath();
+			cv.fill();
+			
+			cv.beginPath();
+			cv.fillStyle='green';
+			
+			cv.arc(250,300,50,0*Math.PI/180,180*Math.PI/180);	
+			cv.fill();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					c=$("#btn").attr('type');
+					alert(c);
+					
+					$("#btn").attr('id','aaa');
+//					更改元素属性值
+
+
+					$("input").attr('id','bbb');
+					c=$("input").prop('id');
+					
+					alert(c);
+					
+//				prop用来操作元素的特定的属性,比如  id  class  a标签的href  img的src  input的value 
+// 				checkbox 的 checked
+//				attr用来操作元素的非特定的属性
+
+//				能给元素提供特殊功能的属性叫特定属性
+
+				$("input").removeAttr('hu');
+//				removeAttr删除任何属性,本质上删除属性的节点
+
+
+				$("input").removeProp('value');
+//				removeProp将属性的值删掉  删除后为undefined
+
+//				Attr 与 Prop 相互试用
+				
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="按钮" hu="hu" hd="hd"/>
+	</body>
+</html>

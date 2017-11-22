@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(){
+				this.name="孙悟空";
+				this.age=18
+			}
+				 var per =new Person();
+//				 普通函数直接调用   构造函数使用new关键字
+//				构造函数会执行函数中的代码
+ 
+//				 console.log(per.name+per.age);
+				 console.log(per);
+			function createDog(name,age){
+				var obj=new Object();
+				obj.name=name;
+				obj.sayHello=fun;
+				
+				return obj;
+			}
+			function fun(){
+					alert("汪汪~~");
+				}
+			var dog = createDog("旺财",3);
+			dog.sayHello();
+			console.log(dog.name);
+			console.log(per instanceof Person);
+//			使用isntanceof 检查一个对象是否是一个类的实例
+//			对象 instanceof 构造函数
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

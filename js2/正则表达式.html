@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			正则表达式用于定义一些字符的规则
+//			var 变量 =new RegExp("正则表达式","匹配模式");
+			a="123i";
+//			var reg =new RegExp("a");
+			var reg =new RegExp(a,"i");
+//			"i"代表忽略大小写
+			console.log(reg);
+			var str="Adwad";
+			console.log(reg.test(str));
+//			检测字符串中是否含有a  不区分大小写
+			var str="b";			
+			console.log(reg.test(str));
+			
+//			var reg=/a/i;等于  var reg =new RegExp("a","i");
+//			var reg=/a|b/ 等于 var reg=/[ab]/;
+// 			var reg=/[a-z]/;  从a到z内含有的字符  [A-Z]任意大写  [A-z]任意字符
+//			reg=/a[bde]c/	 检查字符串是否含有 abc adc aec
+//			检查字符串中是否含有a或b;
+			var str="ac";
+			console.log(reg.test(str));
+//			reg=/^ac/;   检查字符串中是否不含有ac的字符
+			
+//			i : 表示区分大小写字母匹配。
+//　　　　　	m ：表示多行匹配。
+//　　　　　	g : 表示全局匹配。
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

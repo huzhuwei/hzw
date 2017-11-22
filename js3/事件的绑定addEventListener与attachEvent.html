@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+
+			window.onload=function(){
+//				第一种方式
+				var btn = document.getElementById("btn");				
+				btn.onclick=function(){	
+					alert(1);
+				}
+				
+//				第二种方式也可同样触发click事件,并且可重复同一事件
+//				addEventListener不支持IE8及以下
+//				参数:1事件的字符串,不含on  2回调函数,事件触发被调用 3需要一个布尔值,一般为false
+//				this 是绑定事件的对象
+				if(window.addEventListener){
+				btn.addEventListener("click",function(){
+					alert(2);
+				},false);
+				btn.addEventListener("click",function(){
+					alert(3);
+				},false);
+				}else{
+//				第三种方式
+//				attachEvent只支持IE10及以下  ,不支持其他浏览器
+//				this是window
+//				逆向执行  先显示5  再显示4
+				btn.attachEvent("onclick",function(){
+					alert(4);
+				});
+				btn.attachEvent("onclick",function(){
+					alert(5);
+				});
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">点我一下</button>
+	</body>
+</html>

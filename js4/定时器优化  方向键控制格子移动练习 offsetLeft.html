@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			window.onload=function(){
+				var bx1=document.getElementById("bx1");
+				var timer,kc,speed;
+				bx1.onclick=function(){
+					document.onkeydown=function(event){
+						event=event||window.event;
+						kc=event.keyCode;
+						if(event.ctrlKey){
+							speed=30;
+						}else{
+							speed=10;
+						}
+					}
+				}
+						timer=setInterval(function(){
+
+						switch(kc){
+							case 37:
+								bx1.style.left=bx1.offsetLeft-speed+"px";
+								break;
+							
+							case 38:
+								bx1.style.top=bx1.offsetTop-speed+"px"
+								break;
+							
+							case 39:
+								bx1.style.left=bx1.offsetLeft+speed+"px";
+								break;
+							
+							case 40:								
+								bx1.style.top=bx1.offsetTop+speed+"px";
+								break;
+						}
+						},50)
+					
+					
+					
+					document.onkeyup=function(event){
+						kc=0;
+					}
+			}
+			
+		</script>
+		
+		<style type="text/css">
+			#bx1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bx1"></div>
+	</body>
+</html>

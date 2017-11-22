@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			console.time("test");
+			var count=0;
+			for(i=2;i<1000;i++){	
+				var flag=true;
+				for(j=2;j<=Math.sqrt(i);j++){
+					if(i%j==0){
+					flag=false;
+					break;
+					}
+				}
+				if(flag){
+					document.write(i+"是质数<br />");
+					count++;
+				}
+			}
+			document.write("<br />有质数"+count+"个");
+			console.timeEnd("test");
+			
+		</script>
+	</head>
+	<body>
+		
+		
+	</body>
+</html>

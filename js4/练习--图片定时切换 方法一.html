@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			var bx1=document.getElementById("bx1");
+			var btn1=document.getElementById("btn1");
+			var btn2=document.getElementById("btn2");
+			var a=1,b=0,timer;
+//			定义timer为全局 使两个点击函数都能获取
+			btn1.onclick=function(){
+				clearInterval(timer);
+//				每次点击清除一次定时器,防止因多次触发点击事件而生成多个定时器事件
+				timer=setInterval(function(){
+					a++;
+					switch(a){
+						case 2:bx1.innerHTML="<img src='img/2.jpg'/>";
+						break;
+						case 3:bx1.innerHTML="<img src='img/3.jpg'/>";
+						break;
+						case 4:bx1.innerHTML="<img src='img/4.jpg'/>";
+						break;
+						case 5:bx1.innerHTML="<img src='img/5.jpg'/>";
+						break;
+						case 6:bx1.innerHTML="<img src='img/1.jpg'/>";a=1;
+						break;
+					}				
+				},1000)
+							
+			}
+			
+			btn2.onclick=function(){
+				clearInterval(timer);
+			}
+		}
+	</script>
+	
+	<style type="text/css">
+		
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		
+	</style>
+	<body>
+		<div id="bx1"><img src='img/1.jpg'/></div>
+	
+		<button id="btn1">开始</button>
+		<button id="btn2">停止</button>
+		
+			
+		
+	
+		
+	</body>
+</html>

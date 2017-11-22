@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				event=event||window.event;
+				var input=document.getElementById("it");
+				input.onkeydown=function(event){
+					if(event.keyCode>0&&event.ctrlKey)
+					console.log(event.keyCode+"ctrl同时被按下");
+					
+					if(event.keyCode>0&&event.keyCode<80)
+					return false;
+//					取消浏览器默认行为,输入框不会有内容
+//					效果:限制一些字母无法输入
+				}
+//				document.onkeyup=function(){
+//					console.log("按键取消了");
+//				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="" id="it" value="" />
+	</body>
+</html>

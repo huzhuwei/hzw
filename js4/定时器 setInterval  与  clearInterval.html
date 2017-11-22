@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var a=0;
+				for(var i=0;i<10;i++){
+					a++;
+					h1.innerHTML=a;
+				}
+				var timer=setInterval(function(){
+					
+					h1.innerHTML=a++;
+//					先执行  再++
+					if(a==50){
+//						如果a=50,结束定时器
+						clearInterval(timer);
+					}
+				},100)
+//				setInterval  定时器
+//				setInterval(执行函数,时间间隔(毫秒))   
+				console.log(timer);
+//				timer:返回number的数值,作为定时器的唯一标识
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="h1"></h1>
+	</body>
+</html>

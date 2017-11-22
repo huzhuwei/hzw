@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jQuery-1.11.3.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$('#btn').click(function(){
+					
+					$('img').animate({'left':'200px','Height':'100px','width':'100px'},2000,'linear',function(){
+						alert('执行完毕');
+//						最后两个参数可以不填  则为非匀速运动
+					})
+					
+				})
+				
+			})
+			
+			
+			
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="快跑" />
+		<img src="img/小人.gif"/>
+	</body>
+</html>

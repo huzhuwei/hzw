@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+		window.onload=function(){
+			
+		
+			var us=navigator.userAgent;
+			alert(us);
+			if(/firefox/i.test(us)){
+				alert("这是火狐");				
+			}
+			else if(/chrome/i.test(us)){
+				alert("这是Chrome");
+			}
+			else if("ActiveXObject" in window){
+//				只有IE有ActiveXObject属性
+				alert("这是IE");
+			}else{
+				alert("这是其他");
+			}
+		}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

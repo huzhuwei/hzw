@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			基本数据类型
+//			string Number Boolean Null Undefined
+//			引用数据类型
+//			Object
+//			js为我们提供了三个包装类,通过三个包装类可以将基本数据类型的数据转换成为对象
+//			1.String 2.Number 3.Boolean  
+			var a=123;
+			var num=new Number(3);
+			console.log(typeof a);
+			var num1=new Number(3);
+			var num2=new Number(3);
+//			Number()转换成数据对象
+			console.log(typeof num);
+			console.log(num1==num2);
+//			false 两个对象的地址不一样 
+			console.log(num);
+			var s=13,m;
+			s=s.toString();
+			m=s.hello="hello";
+//			s.hello被临时赋值,不影响原数值
+			console.log(typeof s);
+			console.log(m);
+//			输出hello
+			console.log(s.hello);
+//			输出indefined
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

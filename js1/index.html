@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			alert("这是我的第一行js代码");
+//			警告框
+		   	document.write("看我出不出来");
+////		   	向body中输出一个内容
+			console.log("你猜我在哪");
+			
+			var a = 123;
+			console.log(a);
+			console.log(typeof a);
+//			检查字符类型
+		</script>
+		<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+		<!--在该script标签中一旦引入外部文件,就不能再编写代码了,浏览器忽略,可以新建一个script标签-->
+			<!--js严格区分大小写
+				以分号结尾
+			-->
+		
+		
+	</head> 
+	<body>
+		<button onclick="alert('点我干嘛')">点我一下</button>
+		<a href="javascript:alert('让你点就点')">点我一下</a>
+		<a href="javascript:;">点我一下</a>  点击无效
+		
+	</body>
+</html>

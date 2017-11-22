@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			for(var i=100;i<1000000000;i++){
+				var bai=parseInt(i/100);
+				var shi=parseInt((i-bai*100)/10);
+				var ge=i%10;
+				
+				if(bai*bai*bai+shi*shi*shi+ge*ge*ge==i){
+					console.log(i);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

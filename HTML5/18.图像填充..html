@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: #90EE90;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		
+		
+		<script type="text/javascript">
+			
+			var canvas = document.getElementById('canvas');
+			var cv = canvas.getContext('2d');
+			var img = new Image();
+			img.src = 'img/1.jpg';
+						
+//			var rule = cv.createPattern(img,'no-repeat');
+//			cv.rect(10,10,200,200);
+//			cv.fillStyle = rule;
+//			cv.fill();
+
+			img.onload=function(){
+				
+				cv.drawImage(img,50,50,100,100);
+//				cv.drawImage(img,50,50);
+//				最后两个参数设置图片的大小 可以不写
+				
+			
+//			获得指定区域所有像素点的信息
+			var allDate = cv.getImageData(80,80,50,50);
+//			在80 80 的位置 截取 50宽高的像素  保存在allDate中
+			cv.putImageData(allDate,200,200);
+//			在200,200 的位置放入被截取的像素
+//			
+			}
+		</script>
+		
+	</body>
+</html>

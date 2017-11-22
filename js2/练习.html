@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#outer{
+				width: 300px;
+				/*height: 300px;*/
+				margin: 0px auto;
+				padding: 10px;
+				background-color: greenyellow;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			window.onload=function(){
+				var prev=document.getElementById("prev");
+				var next=document.getElementById("next");
+				var img=document.getElementsByTagName("img")[0];
+//				alert(img);
+				var imgArr=["../../polo-360/img/bg3-2.png","../../polo-360/img/bg3-1.png","../../polo-360/img/bg3-3.png"]
+				var i=0;
+				var info=document.getElementById("info");
+				info.innerHTML="一共"+imgArr.length+"张图片,当前第"+(i+1)+"张"
+//				console.log(info);
+				next.onclick=function(){
+//					alert("上一张");
+					i++;
+					if(i>imgArr.length-1){
+						i=0;
+					}
+					img.src=imgArr[i];
+					info.innerHTML="一共"+imgArr.length+"张图片,当前第"+(i+1)+"张"
+					
+					
+				}
+				prev.onclick=function(){
+//					alert("下一张");
+					i--;
+					if(i<0){
+						i=imgArr.length-1;
+					}
+					img.src=imgArr[i];
+					info.innerHTML="一共"+imgArr.length+"张图片,当前第"+(i+1)+"张"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			<p id="info"></p>
+			<img src="../../polo-360/img/bg3-2.png"/>
+			<button id="prev">上一级</button>
+			<button id="next">下一张</button>
+			
+		</div>
+	</body>
+</html>
